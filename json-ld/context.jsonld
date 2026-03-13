@@ -1,0 +1,19 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "gbp": "https://mybusiness.googleapis.com/v4/",
+    "LocalBusiness": "schema:LocalBusiness",
+    "name": "schema:name",
+    "description": "schema:description",
+    "address": "schema:address",
+    "telephone": "schema:telephone",
+    "url": "schema:url",
+    "openingHoursSpecification": "schema:openingHoursSpecification",
+    "review": "schema:review",
+    "aggregateRating": "schema:aggregateRating",
+    "photo": "schema:photo",
+    "geo": "schema:geo",
+    "category": "schema:additionalType",
+    "priceRange": "schema:priceRange"
+  }
+}

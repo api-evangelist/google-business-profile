@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "Location.json",
+  "title": "Google Business Profile Location",
+  "description": "A business location managed through the Google Business Profile API.",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Google identifier for this location."
+    },
+    "locationName": {
+      "type": "string",
+      "description": "The name of the business location."
+    },
+    "primaryPhone": {
+      "type": "string",
+      "description": "Primary phone number of the business."
+    },
+    "address": {
+      "type": "object",
+      "description": "Physical address of the business.",
+      "properties": {
+        "addressLines": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "locality": {
+          "type": "string"
+        },
+        "administrativeArea": {
+          "type": "string"
+        },
+        "postalCode": {
+          "type": "string"
+        },
+        "regionCode": {
+          "type": "string"
+        }
+      }
+    },
+    "primaryCategory": {
+      "type": "object",
+      "description": "Primary business category.",
+      "properties": {
+        "displayName": {
+          "type": "string"
+        },
+        "categoryId": {
+          "type": "string"
+        }
+      }
+    },
+    "websiteUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL for the business website."
+    },
+    "regularHours": {
+      "type": "object",
+      "description": "Regular business hours."
+    },
+    "locationState": {
+      "type": "object",
+      "description": "State of the location."
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Additional metadata for the location."
+    }
+  }
+}

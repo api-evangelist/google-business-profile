@@ -1,0 +1,418 @@
+openapi: 3.1.0
+info:
+  title: Google Business Profile API
+  description: >-
+    The Google Business Profile API provides an interface for managing business
+    location information on Google. It enables developers to programmatically
+    manage accounts, locations, reviews, media, posts, and more.
+  version: 4.0.0
+  contact:
+    name: Google
+    url: https://developers.google.com/my-business/reference/rest
+servers:
+  - url: https://mybusiness.googleapis.com/v4
+paths:
+  /accounts:
+    get:
+      operationId: listAccounts
+      summary: List Accounts
+      description: Lists all accounts for the authenticated user.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListAccountsResponse'
+  /accounts/{accountId}:
+    get:
+      operationId: getAccount
+      summary: Get Account
+      description: Gets the specified account.
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Account'
+  /accounts/{accountId}/locations:
+    get:
+      operationId: listLocations
+      summary: List Locations
+      description: Lists the locations for the specified account.
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListLocationsResponse'
+    post:
+      operationId: createLocation
+      summary: Create Location
+      description: Creates a new location for the specified account.
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Location'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+  /accounts/{accountId}/locations/{locationId}:
+    get:
+      operationId: getLocation
+      summary: Get Location
+      description: Gets the specified location.
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: locationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+    patch:
+      operationId: updateLocation
+      summary: Update Location
+      description: Updates the specified location.
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: locationId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Location'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Location'
+    delete:
+      operationId: deleteLocation
+      summary: Delete Location
+      description: Deletes a location.
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: locationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+  /accounts/{accountId}/locations/{locationId}/reviews:
+    get:
+      operationId: listReviews
+      summary: List Reviews
+      description: Returns a paginated list of reviews for the specified location.
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: locationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListReviewsResponse'
+  /accounts/{accountId}/locations/{locationId}/reviews/{reviewId}/reply:
+    put:
+      operationId: replyToReview
+      summary: Reply to Review
+      description: Updates the reply to a specified review.
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: locationId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: reviewId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                comment:
+                  type: string
+      responses:
+        '200':
+          description: Successful response
+  /accounts/{accountId}/locations/{locationId}/media:
+    get:
+      operationId: listMedia
+      summary: List Media
+      description: Returns a list of media items associated with a location.
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: locationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+  /accounts/{accountId}/locations/{locationId}/localPosts:
+    get:
+      operationId: listLocalPosts
+      summary: List Local Posts
+      description: Returns a list of local posts for a location.
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: locationId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+    post:
+      operationId: createLocalPost
+      summary: Create Local Post
+      description: Creates a new local post for a location.
+      parameters:
+        - name: accountId
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: locationId
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/LocalPost'
+      responses:
+        '200':
+          description: Successful response
+components:
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/business.manage: Manage business listings
+  schemas:
+    Account:
+      type: object
+      properties:
+        name:
+          type: string
+        accountName:
+          type: string
+        type:
+          type: string
+        role:
+          type: string
+        state:
+          type: object
+    Location:
+      type: object
+      properties:
+        name:
+          type: string
+        locationName:
+          type: string
+        primaryPhone:
+          type: string
+        address:
+          type: object
+          properties:
+            addressLines:
+              type: array
+              items:
+                type: string
+            locality:
+              type: string
+            administrativeArea:
+              type: string
+            postalCode:
+              type: string
+            regionCode:
+              type: string
+        primaryCategory:
+          type: object
+          properties:
+            displayName:
+              type: string
+            categoryId:
+              type: string
+        websiteUrl:
+          type: string
+        regularHours:
+          type: object
+        locationState:
+          type: object
+        metadata:
+          type: object
+    Review:
+      type: object
+      properties:
+        name:
+          type: string
+        reviewId:
+          type: string
+        reviewer:
+          type: object
+          properties:
+            displayName:
+              type: string
+            profilePhotoUrl:
+              type: string
+        starRating:
+          type: string
+        comment:
+          type: string
+        createTime:
+          type: string
+        updateTime:
+          type: string
+        reviewReply:
+          type: object
+          properties:
+            comment:
+              type: string
+            updateTime:
+              type: string
+    LocalPost:
+      type: object
+      properties:
+        name:
+          type: string
+        summary:
+          type: string
+        topicType:
+          type: string
+        callToAction:
+          type: object
+        media:
+          type: array
+          items:
+            type: object
+        state:
+          type: string
+        createTime:
+          type: string
+        updateTime:
+          type: string
+    ListAccountsResponse:
+      type: object
+      properties:
+        accounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
+        nextPageToken:
+          type: string
+    ListLocationsResponse:
+      type: object
+      properties:
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Location'
+        nextPageToken:
+          type: string
+    ListReviewsResponse:
+      type: object
+      properties:
+        reviews:
+          type: array
+          items:
+            $ref: '#/components/schemas/Review'
+        averageRating:
+          type: number
+        totalReviewCount:
+          type: integer
+        nextPageToken:
+          type: string
+security:
+  - OAuth2: []
