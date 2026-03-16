@@ -1,5 +1,5 @@
 aid: google-business-profile
-name: Google Business Profile API
+name: Google Business Profile
 description: >-
   The Google Business Profile API provides an interface for managing business
   location information on Google. It enables developers to programmatically
