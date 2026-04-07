@@ -15,7 +15,7 @@ paths:
   /accounts:
     get:
       operationId: listAccounts
-      summary: List Accounts
+      summary: Google Business Profile List Accounts
       description: Lists all accounts for the authenticated user.
       responses:
         '200':
@@ -27,7 +27,7 @@ paths:
   /accounts/{accountId}:
     get:
       operationId: getAccount
-      summary: Get Account
+      summary: Google Business Profile Get Account
       description: Gets the specified account.
       parameters:
         - name: accountId
@@ -45,7 +45,7 @@ paths:
   /accounts/{accountId}/locations:
     get:
       operationId: listLocations
-      summary: List Locations
+      summary: Google Business Profile List Locations
       description: Lists the locations for the specified account.
       parameters:
         - name: accountId
@@ -62,7 +62,7 @@ paths:
                 $ref: '#/components/schemas/ListLocationsResponse'
     post:
       operationId: createLocation
-      summary: Create Location
+      summary: Google Business Profile Create Location
       description: Creates a new location for the specified account.
       parameters:
         - name: accountId
@@ -86,7 +86,7 @@ paths:
   /accounts/{accountId}/locations/{locationId}:
     get:
       operationId: getLocation
-      summary: Get Location
+      summary: Google Business Profile Get Location
       description: Gets the specified location.
       parameters:
         - name: accountId
@@ -108,7 +108,7 @@ paths:
                 $ref: '#/components/schemas/Location'
     patch:
       operationId: updateLocation
-      summary: Update Location
+      summary: Google Business Profile Update Location
       description: Updates the specified location.
       parameters:
         - name: accountId
@@ -136,7 +136,7 @@ paths:
                 $ref: '#/components/schemas/Location'
     delete:
       operationId: deleteLocation
-      summary: Delete Location
+      summary: Google Business Profile Delete Location
       description: Deletes a location.
       parameters:
         - name: accountId
@@ -155,7 +155,7 @@ paths:
   /accounts/{accountId}/locations/{locationId}/reviews:
     get:
       operationId: listReviews
-      summary: List Reviews
+      summary: Google Business Profile List Reviews
       description: Returns a paginated list of reviews for the specified location.
       parameters:
         - name: accountId
@@ -178,7 +178,7 @@ paths:
   /accounts/{accountId}/locations/{locationId}/reviews/{reviewId}/reply:
     put:
       operationId: replyToReview
-      summary: Reply to Review
+      summary: Google Business Profile Reply to Review
       description: Updates the reply to a specified review.
       parameters:
         - name: accountId
@@ -211,7 +211,7 @@ paths:
   /accounts/{accountId}/locations/{locationId}/media:
     get:
       operationId: listMedia
-      summary: List Media
+      summary: Google Business Profile List Media
       description: Returns a list of media items associated with a location.
       parameters:
         - name: accountId
@@ -230,7 +230,7 @@ paths:
   /accounts/{accountId}/locations/{locationId}/localPosts:
     get:
       operationId: listLocalPosts
-      summary: List Local Posts
+      summary: Google Business Profile List Local Posts
       description: Returns a list of local posts for a location.
       parameters:
         - name: accountId
@@ -248,7 +248,7 @@ paths:
           description: Successful response
     post:
       operationId: createLocalPost
-      summary: Create Local Post
+      summary: Google Business Profile Create Local Post
       description: Creates a new local post for a location.
       parameters:
         - name: accountId
