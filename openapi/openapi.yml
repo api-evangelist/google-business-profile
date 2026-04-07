@@ -24,6 +24,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListAccountsResponse'
+      tags:
+        - Accounts
   /accounts/{accountId}:
     get:
       operationId: getAccount
@@ -42,6 +44,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Account'
+      tags:
+        - Accounts
   /accounts/{accountId}/locations:
     get:
       operationId: listLocations
@@ -60,6 +64,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListLocationsResponse'
+      tags:
+        - Accounts
     post:
       operationId: createLocation
       summary: Google Business Profile Create Location
@@ -83,6 +89,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Location'
+      tags:
+        - Accounts
   /accounts/{accountId}/locations/{locationId}:
     get:
       operationId: getLocation
@@ -106,6 +114,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Location'
+      tags:
+        - Accounts
     patch:
       operationId: updateLocation
       summary: Google Business Profile Update Location
@@ -134,6 +144,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Location'
+      tags:
+        - Accounts
     delete:
       operationId: deleteLocation
       summary: Google Business Profile Delete Location
@@ -152,6 +164,8 @@ paths:
       responses:
         '200':
           description: Successful response
+      tags:
+        - Accounts
   /accounts/{accountId}/locations/{locationId}/reviews:
     get:
       operationId: listReviews
@@ -175,6 +189,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListReviewsResponse'
+      tags:
+        - Accounts
   /accounts/{accountId}/locations/{locationId}/reviews/{reviewId}/reply:
     put:
       operationId: replyToReview
@@ -208,6 +224,8 @@ paths:
       responses:
         '200':
           description: Successful response
+      tags:
+        - Accounts
   /accounts/{accountId}/locations/{locationId}/media:
     get:
       operationId: listMedia
@@ -227,6 +245,8 @@ paths:
       responses:
         '200':
           description: Successful response
+      tags:
+        - Accounts
   /accounts/{accountId}/locations/{locationId}/localPosts:
     get:
       operationId: listLocalPosts
@@ -246,6 +266,8 @@ paths:
       responses:
         '200':
           description: Successful response
+      tags:
+        - Accounts
     post:
       operationId: createLocalPost
       summary: Google Business Profile Create Local Post
@@ -270,6 +292,8 @@ paths:
       responses:
         '200':
           description: Successful response
+      tags:
+        - Accounts
 components:
   securitySchemes:
     OAuth2:
@@ -416,3 +440,5 @@ components:
           type: string
 security:
   - OAuth2: []
+tags:
+  - name: Accounts

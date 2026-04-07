@@ -13,10 +13,10 @@ specificationVersion: '0.19'
 type: Index
 tags:
   - Business Profiles
+  - Google
+  - Local Business
   - Locations
   - Reviews
-  - Local Business
-  - Google
 apis:
   - name: Google Business Profile API
     description: >-
@@ -39,8 +39,8 @@ apis:
     tags:
       - Business
       - Locations
-      - Reviews
       - Posts
+      - Reviews
 common:
   - type: Portal
     url: https://developers.google.com/my-business
