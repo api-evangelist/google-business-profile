@@ -1,0 +1,642 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Business Profile API
+  description: The Google Business Profile API provides an interface for managing business location information on Google.
+    It enables developers to programmatically manage accounts, locations, reviews, media, posts, and more.
+  tags:
+  - Google
+  - Business
+  - Profile
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: google-business-profile
+    baseUri: https://mybusiness.googleapis.com/v4
+    description: Google Business Profile API HTTP API.
+    authentication:
+      type: bearer
+      token: '{{GOOGLE_BUSINESS_PROFILE_TOKEN}}'
+    resources:
+    - name: accounts
+      path: /accounts
+      operations:
+      - name: listaccounts
+        method: GET
+        description: Google Business Profile List Accounts
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: accounts-accountid
+      path: /accounts/{accountId}
+      operations:
+      - name: getaccount
+        method: GET
+        description: Google Business Profile Get Account
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: accounts-accountid-locations
+      path: /accounts/{accountId}/locations
+      operations:
+      - name: listlocations
+        method: GET
+        description: Google Business Profile List Locations
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createlocation
+        method: POST
+        description: Google Business Profile Create Location
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: accounts-accountid-locations-locationid
+      path: /accounts/{accountId}/locations/{locationId}
+      operations:
+      - name: getlocation
+        method: GET
+        description: Google Business Profile Get Location
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+        - name: locationId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: updatelocation
+        method: PATCH
+        description: Google Business Profile Update Location
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+        - name: locationId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deletelocation
+        method: DELETE
+        description: Google Business Profile Delete Location
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+        - name: locationId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: accounts-accountid-locations-locationid-reviews
+      path: /accounts/{accountId}/locations/{locationId}/reviews
+      operations:
+      - name: listreviews
+        method: GET
+        description: Google Business Profile List Reviews
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+        - name: locationId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: accounts-accountid-locations-locationid-reviews-
+      path: /accounts/{accountId}/locations/{locationId}/reviews/{reviewId}/reply
+      operations:
+      - name: replytoreview
+        method: PUT
+        description: Google Business Profile Reply to Review
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+        - name: locationId
+          in: path
+          type: string
+          required: true
+        - name: reviewId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: accounts-accountid-locations-locationid-media
+      path: /accounts/{accountId}/locations/{locationId}/media
+      operations:
+      - name: listmedia
+        method: GET
+        description: Google Business Profile List Media
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+        - name: locationId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: accounts-accountid-locations-locationid-localpos
+      path: /accounts/{accountId}/locations/{locationId}/localPosts
+      operations:
+      - name: listlocalposts
+        method: GET
+        description: Google Business Profile List Local Posts
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+        - name: locationId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createlocalpost
+        method: POST
+        description: Google Business Profile Create Local Post
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+        - name: locationId
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: google-business-profile-rest
+    description: REST adapter for Google Business Profile API.
+    resources:
+    - path: /accounts
+      name: listaccounts
+      operations:
+      - method: GET
+        name: listaccounts
+        description: Google Business Profile List Accounts
+        call: google-business-profile.listaccounts
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /accounts/{accountId}
+      name: getaccount
+      operations:
+      - method: GET
+        name: getaccount
+        description: Google Business Profile Get Account
+        call: google-business-profile.getaccount
+        with:
+          accountId: rest.accountId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /accounts/{accountId}/locations
+      name: listlocations
+      operations:
+      - method: GET
+        name: listlocations
+        description: Google Business Profile List Locations
+        call: google-business-profile.listlocations
+        with:
+          accountId: rest.accountId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /accounts/{accountId}/locations
+      name: createlocation
+      operations:
+      - method: POST
+        name: createlocation
+        description: Google Business Profile Create Location
+        call: google-business-profile.createlocation
+        with:
+          accountId: rest.accountId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /accounts/{accountId}/locations/{locationId}
+      name: getlocation
+      operations:
+      - method: GET
+        name: getlocation
+        description: Google Business Profile Get Location
+        call: google-business-profile.getlocation
+        with:
+          accountId: rest.accountId
+          locationId: rest.locationId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /accounts/{accountId}/locations/{locationId}
+      name: updatelocation
+      operations:
+      - method: PATCH
+        name: updatelocation
+        description: Google Business Profile Update Location
+        call: google-business-profile.updatelocation
+        with:
+          accountId: rest.accountId
+          locationId: rest.locationId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /accounts/{accountId}/locations/{locationId}
+      name: deletelocation
+      operations:
+      - method: DELETE
+        name: deletelocation
+        description: Google Business Profile Delete Location
+        call: google-business-profile.deletelocation
+        with:
+          accountId: rest.accountId
+          locationId: rest.locationId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /accounts/{accountId}/locations/{locationId}/reviews
+      name: listreviews
+      operations:
+      - method: GET
+        name: listreviews
+        description: Google Business Profile List Reviews
+        call: google-business-profile.listreviews
+        with:
+          accountId: rest.accountId
+          locationId: rest.locationId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /accounts/{accountId}/locations/{locationId}/reviews/{reviewId}/reply
+      name: replytoreview
+      operations:
+      - method: PUT
+        name: replytoreview
+        description: Google Business Profile Reply to Review
+        call: google-business-profile.replytoreview
+        with:
+          accountId: rest.accountId
+          locationId: rest.locationId
+          reviewId: rest.reviewId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /accounts/{accountId}/locations/{locationId}/media
+      name: listmedia
+      operations:
+      - method: GET
+        name: listmedia
+        description: Google Business Profile List Media
+        call: google-business-profile.listmedia
+        with:
+          accountId: rest.accountId
+          locationId: rest.locationId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /accounts/{accountId}/locations/{locationId}/localPosts
+      name: listlocalposts
+      operations:
+      - method: GET
+        name: listlocalposts
+        description: Google Business Profile List Local Posts
+        call: google-business-profile.listlocalposts
+        with:
+          accountId: rest.accountId
+          locationId: rest.locationId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /accounts/{accountId}/locations/{locationId}/localPosts
+      name: createlocalpost
+      operations:
+      - method: POST
+        name: createlocalpost
+        description: Google Business Profile Create Local Post
+        call: google-business-profile.createlocalpost
+        with:
+          accountId: rest.accountId
+          locationId: rest.locationId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: google-business-profile-mcp
+    transport: http
+    description: MCP adapter for Google Business Profile API for AI agent use.
+    tools:
+    - name: listaccounts
+      description: Google Business Profile List Accounts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-business-profile.listaccounts
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getaccount
+      description: Google Business Profile Get Account
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-business-profile.getaccount
+      with:
+        accountId: tools.accountId
+      inputParameters:
+      - name: accountId
+        type: string
+        description: accountId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listlocations
+      description: Google Business Profile List Locations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-business-profile.listlocations
+      with:
+        accountId: tools.accountId
+      inputParameters:
+      - name: accountId
+        type: string
+        description: accountId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createlocation
+      description: Google Business Profile Create Location
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-business-profile.createlocation
+      with:
+        accountId: tools.accountId
+      inputParameters:
+      - name: accountId
+        type: string
+        description: accountId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getlocation
+      description: Google Business Profile Get Location
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-business-profile.getlocation
+      with:
+        accountId: tools.accountId
+        locationId: tools.locationId
+      inputParameters:
+      - name: accountId
+        type: string
+        description: accountId
+        required: true
+      - name: locationId
+        type: string
+        description: locationId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: updatelocation
+      description: Google Business Profile Update Location
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-business-profile.updatelocation
+      with:
+        accountId: tools.accountId
+        locationId: tools.locationId
+      inputParameters:
+      - name: accountId
+        type: string
+        description: accountId
+        required: true
+      - name: locationId
+        type: string
+        description: locationId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deletelocation
+      description: Google Business Profile Delete Location
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-business-profile.deletelocation
+      with:
+        accountId: tools.accountId
+        locationId: tools.locationId
+      inputParameters:
+      - name: accountId
+        type: string
+        description: accountId
+        required: true
+      - name: locationId
+        type: string
+        description: locationId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listreviews
+      description: Google Business Profile List Reviews
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-business-profile.listreviews
+      with:
+        accountId: tools.accountId
+        locationId: tools.locationId
+      inputParameters:
+      - name: accountId
+        type: string
+        description: accountId
+        required: true
+      - name: locationId
+        type: string
+        description: locationId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: replytoreview
+      description: Google Business Profile Reply to Review
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: google-business-profile.replytoreview
+      with:
+        accountId: tools.accountId
+        locationId: tools.locationId
+        reviewId: tools.reviewId
+      inputParameters:
+      - name: accountId
+        type: string
+        description: accountId
+        required: true
+      - name: locationId
+        type: string
+        description: locationId
+        required: true
+      - name: reviewId
+        type: string
+        description: reviewId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listmedia
+      description: Google Business Profile List Media
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-business-profile.listmedia
+      with:
+        accountId: tools.accountId
+        locationId: tools.locationId
+      inputParameters:
+      - name: accountId
+        type: string
+        description: accountId
+        required: true
+      - name: locationId
+        type: string
+        description: locationId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listlocalposts
+      description: Google Business Profile List Local Posts
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-business-profile.listlocalposts
+      with:
+        accountId: tools.accountId
+        locationId: tools.locationId
+      inputParameters:
+      - name: accountId
+        type: string
+        description: accountId
+        required: true
+      - name: locationId
+        type: string
+        description: locationId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createlocalpost
+      description: Google Business Profile Create Local Post
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-business-profile.createlocalpost
+      with:
+        accountId: tools.accountId
+        locationId: tools.locationId
+      inputParameters:
+      - name: accountId
+        type: string
+        description: accountId
+        required: true
+      - name: locationId
+        type: string
+        description: locationId
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+binds:
+- namespace: env
+  keys:
+    GOOGLE_BUSINESS_PROFILE_TOKEN: GOOGLE_BUSINESS_PROFILE_TOKEN
