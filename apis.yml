@@ -32,7 +32,7 @@ apis:
         url: openapi/openapi.yml
       - type: Authentication
         url: https://developers.google.com/my-business/content/prereqs
-      - type: Getting Started
+      - type: GettingStarted
         url: https://developers.google.com/my-business/content/get-started
       - type: JSONSchema
         url: json-schema/Location.json
@@ -44,7 +44,7 @@ apis:
 common:
   - type: Portal
     url: https://developers.google.com/my-business
-  - type: Getting Started
+  - type: GettingStarted
     url: https://developers.google.com/my-business/content/get-started
   - type: Documentation
     url: https://developers.google.com/my-business/reference/rest
@@ -52,15 +52,15 @@ common:
     url: https://developers.google.com/my-business/content/prereqs
   - type: Pricing
     url: https://developers.google.com/my-business
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://developers.google.com/terms
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://policies.google.com/privacy
-  - type: Status
+  - type: StatusPage
     url: https://status.cloud.google.com/
   - type: Support
     url: https://developers.google.com/my-business/content/support
-  - type: JSON-LD
+  - type: JSONLD
     url: json-ld/context.jsonld
 maintainers:
   - FN: Kin Lane
