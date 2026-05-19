@@ -1,24 +1,23 @@
 naftiko: 1.0.0-alpha2
 info:
-  label: Google Business Profile API
-  description: The Google Business Profile API provides an interface for managing business location information on Google.
-    It enables developers to programmatically manage accounts, locations, reviews, media, posts, and more.
+  label: Google Business Profile API — Accounts
+  description: 'Google Business Profile API — Accounts. 12 operations. Lead operation: Google Business Profile List Accounts.
+    Self-contained Naftiko capability covering one Google Business Profile business surface.'
   tags:
-  - Google
-  - Business
-  - Profile
-  - API
-  created: '2026-05-06'
-  modified: '2026-05-06'
+  - Google Business Profile
+  - Accounts
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    GOOGLE_BUSINESS_PROFILE_API_KEY: GOOGLE_BUSINESS_PROFILE_API_KEY
 capability:
   consumes:
   - type: http
-    namespace: google-business-profile
+    namespace: openapi-accounts
     baseUri: https://mybusiness.googleapis.com/v4
-    description: Google Business Profile API HTTP API.
-    authentication:
-      type: bearer
-      token: '{{GOOGLE_BUSINESS_PROFILE_TOKEN}}'
+    description: Google Business Profile API — Accounts business capability. Self-contained, no shared references.
     resources:
     - name: accounts
       path: /accounts
@@ -31,57 +30,67 @@ capability:
         - name: result
           type: object
           value: $.
-    - name: accounts-accountid
+    - name: accounts-accountId
       path: /accounts/{accountId}
       operations:
       - name: getaccount
         method: GET
         description: Google Business Profile Get Account
-        inputParameters:
-        - name: accountId
-          in: path
-          type: string
-          required: true
         outputRawFormat: json
         outputParameters:
         - name: result
           type: object
           value: $.
-    - name: accounts-accountid-locations
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+    - name: accounts-accountId-locations
       path: /accounts/{accountId}/locations
       operations:
       - name: listlocations
         method: GET
         description: Google Business Profile List Locations
-        inputParameters:
-        - name: accountId
-          in: path
-          type: string
-          required: true
         outputRawFormat: json
         outputParameters:
         - name: result
           type: object
           value: $.
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
       - name: createlocation
         method: POST
         description: Google Business Profile Create Location
-        inputParameters:
-        - name: accountId
-          in: path
-          type: string
-          required: true
         outputRawFormat: json
         outputParameters:
         - name: result
           type: object
           value: $.
-    - name: accounts-accountid-locations-locationid
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: accounts-accountId-locations-locationId
       path: /accounts/{accountId}/locations/{locationId}
       operations:
       - name: getlocation
         method: GET
         description: Google Business Profile Get Location
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: accountId
           in: path
@@ -91,14 +100,14 @@ capability:
           in: path
           type: string
           required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
       - name: updatelocation
         method: PATCH
         description: Google Business Profile Update Location
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: accountId
           in: path
@@ -108,14 +117,19 @@ capability:
           in: path
           type: string
           required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
+        - name: body
+          in: body
           type: object
-          value: $.
+          description: Request body (JSON).
+          required: true
       - name: deletelocation
         method: DELETE
         description: Google Business Profile Delete Location
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: accountId
           in: path
@@ -125,17 +139,79 @@ capability:
           in: path
           type: string
           required: true
+    - name: accounts-accountId-locations-locationId-localPosts
+      path: /accounts/{accountId}/locations/{locationId}/localPosts
+      operations:
+      - name: listlocalposts
+        method: GET
+        description: Google Business Profile List Local Posts
         outputRawFormat: json
         outputParameters:
         - name: result
           type: object
           value: $.
-    - name: accounts-accountid-locations-locationid-reviews
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+        - name: locationId
+          in: path
+          type: string
+          required: true
+      - name: createlocalpost
+        method: POST
+        description: Google Business Profile Create Local Post
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+        - name: locationId
+          in: path
+          type: string
+          required: true
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: accounts-accountId-locations-locationId-media
+      path: /accounts/{accountId}/locations/{locationId}/media
+      operations:
+      - name: listmedia
+        method: GET
+        description: Google Business Profile List Media
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: accountId
+          in: path
+          type: string
+          required: true
+        - name: locationId
+          in: path
+          type: string
+          required: true
+    - name: accounts-accountId-locations-locationId-reviews
       path: /accounts/{accountId}/locations/{locationId}/reviews
       operations:
       - name: listreviews
         method: GET
         description: Google Business Profile List Reviews
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: accountId
           in: path
@@ -145,17 +221,17 @@ capability:
           in: path
           type: string
           required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
-    - name: accounts-accountid-locations-locationid-reviews-
+    - name: accounts-accountId-locations-locationId-reviews-reviewId-reply
       path: /accounts/{accountId}/locations/{locationId}/reviews/{reviewId}/reply
       operations:
       - name: replytoreview
         method: PUT
         description: Google Business Profile Reply to Review
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
         inputParameters:
         - name: accountId
           in: path
@@ -169,474 +245,331 @@ capability:
           in: path
           type: string
           required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
+        - name: body
+          in: body
           type: object
-          value: $.
-    - name: accounts-accountid-locations-locationid-media
-      path: /accounts/{accountId}/locations/{locationId}/media
-      operations:
-      - name: listmedia
-        method: GET
-        description: Google Business Profile List Media
-        inputParameters:
-        - name: accountId
-          in: path
-          type: string
+          description: Request body (JSON).
           required: true
-        - name: locationId
-          in: path
-          type: string
-          required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
-    - name: accounts-accountid-locations-locationid-localpos
-      path: /accounts/{accountId}/locations/{locationId}/localPosts
-      operations:
-      - name: listlocalposts
-        method: GET
-        description: Google Business Profile List Local Posts
-        inputParameters:
-        - name: accountId
-          in: path
-          type: string
-          required: true
-        - name: locationId
-          in: path
-          type: string
-          required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
-      - name: createlocalpost
-        method: POST
-        description: Google Business Profile Create Local Post
-        inputParameters:
-        - name: accountId
-          in: path
-          type: string
-          required: true
-        - name: locationId
-          in: path
-          type: string
-          required: true
-        outputRawFormat: json
-        outputParameters:
-        - name: result
-          type: object
-          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.GOOGLE_BUSINESS_PROFILE_API_KEY}}'
   exposes:
   - type: rest
+    namespace: openapi-accounts-rest
     port: 8080
-    namespace: google-business-profile-rest
-    description: REST adapter for Google Business Profile API.
+    description: REST adapter for Google Business Profile API — Accounts. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
     resources:
-    - path: /accounts
-      name: listaccounts
+    - path: /v1/accounts
+      name: accounts
+      description: REST surface for accounts.
       operations:
       - method: GET
         name: listaccounts
         description: Google Business Profile List Accounts
-        call: google-business-profile.listaccounts
+        call: openapi-accounts.listaccounts
         outputParameters:
         - type: object
           mapping: $.
-    - path: /accounts/{accountId}
-      name: getaccount
+    - path: /v1/accounts/{accountid}
+      name: accounts-accountid
+      description: REST surface for accounts-accountId.
       operations:
       - method: GET
         name: getaccount
         description: Google Business Profile Get Account
-        call: google-business-profile.getaccount
+        call: openapi-accounts.getaccount
         with:
           accountId: rest.accountId
         outputParameters:
         - type: object
           mapping: $.
-    - path: /accounts/{accountId}/locations
-      name: listlocations
+    - path: /v1/accounts/{accountid}/locations
+      name: accounts-accountid-locations
+      description: REST surface for accounts-accountId-locations.
       operations:
       - method: GET
         name: listlocations
         description: Google Business Profile List Locations
-        call: google-business-profile.listlocations
+        call: openapi-accounts.listlocations
         with:
           accountId: rest.accountId
         outputParameters:
         - type: object
           mapping: $.
-    - path: /accounts/{accountId}/locations
-      name: createlocation
-      operations:
       - method: POST
         name: createlocation
         description: Google Business Profile Create Location
-        call: google-business-profile.createlocation
+        call: openapi-accounts.createlocation
         with:
           accountId: rest.accountId
+          body: rest.body
         outputParameters:
         - type: object
           mapping: $.
-    - path: /accounts/{accountId}/locations/{locationId}
-      name: getlocation
+    - path: /v1/accounts/{accountid}/locations/{locationid}
+      name: accounts-accountid-locations-locationid
+      description: REST surface for accounts-accountId-locations-locationId.
       operations:
       - method: GET
         name: getlocation
         description: Google Business Profile Get Location
-        call: google-business-profile.getlocation
+        call: openapi-accounts.getlocation
         with:
           accountId: rest.accountId
           locationId: rest.locationId
         outputParameters:
         - type: object
           mapping: $.
-    - path: /accounts/{accountId}/locations/{locationId}
-      name: updatelocation
-      operations:
       - method: PATCH
         name: updatelocation
         description: Google Business Profile Update Location
-        call: google-business-profile.updatelocation
+        call: openapi-accounts.updatelocation
         with:
           accountId: rest.accountId
           locationId: rest.locationId
+          body: rest.body
         outputParameters:
         - type: object
           mapping: $.
-    - path: /accounts/{accountId}/locations/{locationId}
-      name: deletelocation
-      operations:
       - method: DELETE
         name: deletelocation
         description: Google Business Profile Delete Location
-        call: google-business-profile.deletelocation
+        call: openapi-accounts.deletelocation
         with:
           accountId: rest.accountId
           locationId: rest.locationId
         outputParameters:
         - type: object
           mapping: $.
-    - path: /accounts/{accountId}/locations/{locationId}/reviews
-      name: listreviews
-      operations:
-      - method: GET
-        name: listreviews
-        description: Google Business Profile List Reviews
-        call: google-business-profile.listreviews
-        with:
-          accountId: rest.accountId
-          locationId: rest.locationId
-        outputParameters:
-        - type: object
-          mapping: $.
-    - path: /accounts/{accountId}/locations/{locationId}/reviews/{reviewId}/reply
-      name: replytoreview
-      operations:
-      - method: PUT
-        name: replytoreview
-        description: Google Business Profile Reply to Review
-        call: google-business-profile.replytoreview
-        with:
-          accountId: rest.accountId
-          locationId: rest.locationId
-          reviewId: rest.reviewId
-        outputParameters:
-        - type: object
-          mapping: $.
-    - path: /accounts/{accountId}/locations/{locationId}/media
-      name: listmedia
-      operations:
-      - method: GET
-        name: listmedia
-        description: Google Business Profile List Media
-        call: google-business-profile.listmedia
-        with:
-          accountId: rest.accountId
-          locationId: rest.locationId
-        outputParameters:
-        - type: object
-          mapping: $.
-    - path: /accounts/{accountId}/locations/{locationId}/localPosts
-      name: listlocalposts
+    - path: /v1/accounts/{accountid}/locations/{locationid}/localposts
+      name: accounts-accountid-locations-locationid-localposts
+      description: REST surface for accounts-accountId-locations-locationId-localPosts.
       operations:
       - method: GET
         name: listlocalposts
         description: Google Business Profile List Local Posts
-        call: google-business-profile.listlocalposts
+        call: openapi-accounts.listlocalposts
         with:
           accountId: rest.accountId
           locationId: rest.locationId
         outputParameters:
         - type: object
           mapping: $.
-    - path: /accounts/{accountId}/locations/{locationId}/localPosts
-      name: createlocalpost
-      operations:
       - method: POST
         name: createlocalpost
         description: Google Business Profile Create Local Post
-        call: google-business-profile.createlocalpost
+        call: openapi-accounts.createlocalpost
         with:
           accountId: rest.accountId
           locationId: rest.locationId
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/accounts/{accountid}/locations/{locationid}/media
+      name: accounts-accountid-locations-locationid-media
+      description: REST surface for accounts-accountId-locations-locationId-media.
+      operations:
+      - method: GET
+        name: listmedia
+        description: Google Business Profile List Media
+        call: openapi-accounts.listmedia
+        with:
+          accountId: rest.accountId
+          locationId: rest.locationId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/accounts/{accountid}/locations/{locationid}/reviews
+      name: accounts-accountid-locations-locationid-reviews
+      description: REST surface for accounts-accountId-locations-locationId-reviews.
+      operations:
+      - method: GET
+        name: listreviews
+        description: Google Business Profile List Reviews
+        call: openapi-accounts.listreviews
+        with:
+          accountId: rest.accountId
+          locationId: rest.locationId
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/accounts/{accountid}/locations/{locationid}/reviews/{reviewid}/reply
+      name: accounts-accountid-locations-locationid-reviews-reviewid-reply
+      description: REST surface for accounts-accountId-locations-locationId-reviews-reviewId-reply.
+      operations:
+      - method: PUT
+        name: replytoreview
+        description: Google Business Profile Reply to Review
+        call: openapi-accounts.replytoreview
+        with:
+          accountId: rest.accountId
+          locationId: rest.locationId
+          reviewId: rest.reviewId
+          body: rest.body
         outputParameters:
         - type: object
           mapping: $.
   - type: mcp
+    namespace: openapi-accounts-mcp
     port: 9090
-    namespace: google-business-profile-mcp
     transport: http
-    description: MCP adapter for Google Business Profile API for AI agent use.
+    description: MCP adapter for Google Business Profile API — Accounts. One tool per consumed operation, routed inline through
+      this capability's consumes block.
     tools:
-    - name: listaccounts
+    - name: google-business-profile-list-accounts
       description: Google Business Profile List Accounts
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: google-business-profile.listaccounts
+      call: openapi-accounts.listaccounts
       outputParameters:
       - type: object
         mapping: $.
-    - name: getaccount
+    - name: google-business-profile-get-account
       description: Google Business Profile Get Account
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: google-business-profile.getaccount
+      call: openapi-accounts.getaccount
       with:
         accountId: tools.accountId
-      inputParameters:
-      - name: accountId
-        type: string
-        description: accountId
-        required: true
       outputParameters:
       - type: object
         mapping: $.
-    - name: listlocations
+    - name: google-business-profile-list-locations
       description: Google Business Profile List Locations
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: google-business-profile.listlocations
+      call: openapi-accounts.listlocations
       with:
         accountId: tools.accountId
-      inputParameters:
-      - name: accountId
-        type: string
-        description: accountId
-        required: true
       outputParameters:
       - type: object
         mapping: $.
-    - name: createlocation
+    - name: google-business-profile-create-location
       description: Google Business Profile Create Location
       hints:
         readOnly: false
         destructive: false
         idempotent: false
-      call: google-business-profile.createlocation
+      call: openapi-accounts.createlocation
       with:
         accountId: tools.accountId
-      inputParameters:
-      - name: accountId
-        type: string
-        description: accountId
-        required: true
+        body: tools.body
       outputParameters:
       - type: object
         mapping: $.
-    - name: getlocation
+    - name: google-business-profile-get-location
       description: Google Business Profile Get Location
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: google-business-profile.getlocation
+      call: openapi-accounts.getlocation
       with:
         accountId: tools.accountId
         locationId: tools.locationId
-      inputParameters:
-      - name: accountId
-        type: string
-        description: accountId
-        required: true
-      - name: locationId
-        type: string
-        description: locationId
-        required: true
       outputParameters:
       - type: object
         mapping: $.
-    - name: updatelocation
+    - name: google-business-profile-update-location
       description: Google Business Profile Update Location
       hints:
         readOnly: false
         destructive: false
-        idempotent: false
-      call: google-business-profile.updatelocation
+        idempotent: true
+      call: openapi-accounts.updatelocation
       with:
         accountId: tools.accountId
         locationId: tools.locationId
-      inputParameters:
-      - name: accountId
-        type: string
-        description: accountId
-        required: true
-      - name: locationId
-        type: string
-        description: locationId
-        required: true
+        body: tools.body
       outputParameters:
       - type: object
         mapping: $.
-    - name: deletelocation
+    - name: google-business-profile-delete-location
       description: Google Business Profile Delete Location
       hints:
         readOnly: false
         destructive: true
         idempotent: true
-      call: google-business-profile.deletelocation
+      call: openapi-accounts.deletelocation
       with:
         accountId: tools.accountId
         locationId: tools.locationId
-      inputParameters:
-      - name: accountId
-        type: string
-        description: accountId
-        required: true
-      - name: locationId
-        type: string
-        description: locationId
-        required: true
       outputParameters:
       - type: object
         mapping: $.
-    - name: listreviews
-      description: Google Business Profile List Reviews
-      hints:
-        readOnly: true
-        destructive: false
-        idempotent: true
-      call: google-business-profile.listreviews
-      with:
-        accountId: tools.accountId
-        locationId: tools.locationId
-      inputParameters:
-      - name: accountId
-        type: string
-        description: accountId
-        required: true
-      - name: locationId
-        type: string
-        description: locationId
-        required: true
-      outputParameters:
-      - type: object
-        mapping: $.
-    - name: replytoreview
-      description: Google Business Profile Reply to Review
-      hints:
-        readOnly: false
-        destructive: false
-        idempotent: true
-      call: google-business-profile.replytoreview
-      with:
-        accountId: tools.accountId
-        locationId: tools.locationId
-        reviewId: tools.reviewId
-      inputParameters:
-      - name: accountId
-        type: string
-        description: accountId
-        required: true
-      - name: locationId
-        type: string
-        description: locationId
-        required: true
-      - name: reviewId
-        type: string
-        description: reviewId
-        required: true
-      outputParameters:
-      - type: object
-        mapping: $.
-    - name: listmedia
-      description: Google Business Profile List Media
-      hints:
-        readOnly: true
-        destructive: false
-        idempotent: true
-      call: google-business-profile.listmedia
-      with:
-        accountId: tools.accountId
-        locationId: tools.locationId
-      inputParameters:
-      - name: accountId
-        type: string
-        description: accountId
-        required: true
-      - name: locationId
-        type: string
-        description: locationId
-        required: true
-      outputParameters:
-      - type: object
-        mapping: $.
-    - name: listlocalposts
+    - name: google-business-profile-list-local
       description: Google Business Profile List Local Posts
       hints:
         readOnly: true
         destructive: false
         idempotent: true
-      call: google-business-profile.listlocalposts
+      call: openapi-accounts.listlocalposts
       with:
         accountId: tools.accountId
         locationId: tools.locationId
-      inputParameters:
-      - name: accountId
-        type: string
-        description: accountId
-        required: true
-      - name: locationId
-        type: string
-        description: locationId
-        required: true
       outputParameters:
       - type: object
         mapping: $.
-    - name: createlocalpost
+    - name: google-business-profile-create-local
       description: Google Business Profile Create Local Post
       hints:
         readOnly: false
         destructive: false
         idempotent: false
-      call: google-business-profile.createlocalpost
+      call: openapi-accounts.createlocalpost
       with:
         accountId: tools.accountId
         locationId: tools.locationId
-      inputParameters:
-      - name: accountId
-        type: string
-        description: accountId
-        required: true
-      - name: locationId
-        type: string
-        description: locationId
-        required: true
+        body: tools.body
       outputParameters:
       - type: object
         mapping: $.
-binds:
-- namespace: env
-  keys:
-    GOOGLE_BUSINESS_PROFILE_TOKEN: GOOGLE_BUSINESS_PROFILE_TOKEN
+    - name: google-business-profile-list-media
+      description: Google Business Profile List Media
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-accounts.listmedia
+      with:
+        accountId: tools.accountId
+        locationId: tools.locationId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-business-profile-list-reviews
+      description: Google Business Profile List Reviews
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: openapi-accounts.listreviews
+      with:
+        accountId: tools.accountId
+        locationId: tools.locationId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: google-business-profile-reply-review
+      description: Google Business Profile Reply to Review
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: true
+      call: openapi-accounts.replytoreview
+      with:
+        accountId: tools.accountId
+        locationId: tools.locationId
+        reviewId: tools.reviewId
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
