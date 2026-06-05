@@ -1,8 +1,9 @@
 aid: google-business-profile
 name: Google Business Profile
-description: The Google Business Profile API provides an interface for managing business location information on Google. It
-  enables developers to programmatically manage accounts, locations, reviews, media, posts, questions and answers, and verification
-  for business listings.
+description: >-
+  The Google Business Profile API provides an interface for managing business location information on Google. It enables
+  developers to programmatically manage accounts, locations, reviews, media, posts, questions and answers, and
+  verification for business listings.
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-business-profile/refs/heads/main/apis.yml
 created: '2026-03-13'
@@ -17,28 +18,27 @@ tags:
   - Reviews
 apis:
   - name: Google Business Profile API
-    description: Provides programmatic access to manage business location information on Google, including accounts, locations,
+    description: >-
+      Provides programmatic access to manage business location information on Google, including accounts, locations,
       reviews, media, local posts, and verification workflows.
     humanURL: https://developers.google.com/my-business/reference/rest
     baseURL: https://mybusiness.googleapis.com/v4
     properties:
-    - type: Documentation
-      url: https://developers.google.com/my-business/reference/rest
-    - type: OpenAPI
-      url: openapi/openapi.yml
-    - type: Authentication
-      url: https://developers.google.com/my-business/content/prereqs
-    - type: GettingStarted
-      url: https://developers.google.com/my-business/content/get-started
-    - type: JSONSchema
-      url: json-schema/Location.json
-    - type: NaftikoCapability
-      url: capabilities/openapi-accounts.yaml
+      - type: Documentation
+        url: https://developers.google.com/my-business/reference/rest
+      - type: OpenAPI
+        url: openapi/openapi.yml
+      - type: Authentication
+        url: https://developers.google.com/my-business/content/prereqs
+      - type: GettingStarted
+        url: https://developers.google.com/my-business/content/get-started
+      - type: JSONSchema
+        url: json-schema/Location.json
     tags:
-    - Business
-    - Locations
-    - Posts
-    - Reviews
+      - Business
+      - Locations
+      - Posts
+      - Reviews
 common:
   - type: GitHubOrganization
     url: https://github.com/google

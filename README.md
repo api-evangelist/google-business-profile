@@ -1,38 +1,68 @@
-# Google Business Profile API
+# Google Business Profile (google-business-profile)
 
-The Google Business Profile API provides an interface for managing business location information on Google. It enables developers to programmatically manage accounts, locations, reviews, media, posts, and more.
+The Google Business Profile API provides an interface for managing business location information on Google. It enables developers to programmatically manage accounts, locations, reviews, media, posts, questions and answers, and verification for business listings.
+
+**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-business-profile/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-business-profile/refs/heads/main/apis.yml)
+
+## Scope
+
+- **Type:** Index
+
+## Tags
+
+- Business Profiles
+- Google
+- Local Business
+- Locations
+- Reviews
+
+## Timestamps
+
+- **Created:** 2026-03-13
+- **Modified:** 2026-05-19
 
 ## APIs
 
-- **Google Business Profile API** - Manage business location information including accounts, locations, reviews, media, and local posts.
+### Google Business Profile API
 
-## Base URL
+Provides programmatic access to manage business location information on Google, including accounts, locations, reviews, media, local posts, and verification workflows.
 
-```
-https://mybusiness.googleapis.com/v4
-```
+- **Human URL:** [https://developers.google.com/my-business/reference/rest](https://developers.google.com/my-business/reference/rest)
+- **Base URL:** `https://mybusiness.googleapis.com/v4`
 
-## Key Endpoints
+#### Tags
 
-- **List Accounts** - `GET /accounts` - List all accounts
-- **List Locations** - `GET /accounts/{accountId}/locations` - List business locations
-- **Get Location** - `GET /accounts/{accountId}/locations/{locationId}` - Get location details
-- **List Reviews** - `GET /accounts/{accountId}/locations/{locationId}/reviews` - List reviews
-- **Reply to Review** - `PUT /accounts/{accountId}/locations/{locationId}/reviews/{reviewId}/reply` - Reply to a review
-- **List Local Posts** - `GET /accounts/{accountId}/locations/{locationId}/localPosts` - List local posts
+- Business
+- Locations
+- Posts
+- Reviews
 
-## Artifacts
+#### Properties
 
-- [APIs.yml](apis.yml) - APIs.json index
-- [OpenAPI](openapi/openapi.yml) - OpenAPI 3.1.0 specification
-- [JSON Schema](json-schema/Location.json) - JSON Schema (draft 2020-12) for Location
-- [JSON-LD Context](json-ld/context.jsonld) - JSON-LD context mapping
-
-## Resources
-
+- [Documentation](https://developers.google.com/my-business/reference/rest)
+- [OpenAPI](openapi/openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
+- [Postman Collection](collections/openapi.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
+- [Open Collection](collections/openapi.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Authentication](https://developers.google.com/my-business/content/prereqs)
 - [Getting Started](https://developers.google.com/my-business/content/get-started)
-- [API Reference](https://developers.google.com/my-business/reference/rest)
+- [JSON Schema](json-schema/Location.json) — [JSON Schema](https://json-schema.org/specification)
+
+## Common Properties
+
+- [GitHub Organization](https://github.com/google)
+- [LinkedIn](https://www.linkedin.com/showcase/google-my-business)
+- [Portal](https://developers.google.com/my-business)
+- [Getting Started](https://developers.google.com/my-business/content/get-started)
+- [Documentation](https://developers.google.com/my-business/reference/rest)
+- [Authentication](https://developers.google.com/my-business/content/prereqs)
+- [Pricing](https://developers.google.com/my-business)
+- [Terms of Service](https://developers.google.com/terms)
+- [Privacy Policy](https://policies.google.com/privacy)
+- [Status Page](https://status.cloud.google.com/)
+- [Support](https://developers.google.com/my-business/content/support)
+- [JSON-LD](json-ld/context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
 
 ## Maintainers
 
-- **Kin Lane** - kin@apievangelist.com
+**FN:** Kin Lane
+**Email:** kin@apievangelist.com
