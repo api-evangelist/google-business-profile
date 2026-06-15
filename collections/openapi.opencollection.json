@@ -1,0 +1,300 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Business Profile API",
+    "version": "4.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "authorization_code",
+      "authorizationUrl": "https://accounts.google.com/o/oauth2/auth",
+      "accessTokenUrl": "https://oauth2.googleapis.com/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Business Profile List Accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://mybusiness.googleapis.com/v4/accounts"
+          },
+          "docs": "Lists all accounts for the authenticated user."
+        },
+        {
+          "info": {
+            "name": "Google Business Profile Get Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://mybusiness.googleapis.com/v4/accounts/:accountId",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets the specified account."
+        },
+        {
+          "info": {
+            "name": "Google Business Profile List Locations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://mybusiness.googleapis.com/v4/accounts/:accountId/locations",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists the locations for the specified account."
+        },
+        {
+          "info": {
+            "name": "Google Business Profile Create Location",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://mybusiness.googleapis.com/v4/accounts/:accountId/locations",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new location for the specified account."
+        },
+        {
+          "info": {
+            "name": "Google Business Profile Get Location",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://mybusiness.googleapis.com/v4/accounts/:accountId/locations/:locationId",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locationId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets the specified location."
+        },
+        {
+          "info": {
+            "name": "Google Business Profile Update Location",
+            "type": "http"
+          },
+          "http": {
+            "method": "PATCH",
+            "url": "https://mybusiness.googleapis.com/v4/accounts/:accountId/locations/:locationId",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates the specified location."
+        },
+        {
+          "info": {
+            "name": "Google Business Profile Delete Location",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://mybusiness.googleapis.com/v4/accounts/:accountId/locations/:locationId",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locationId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes a location."
+        },
+        {
+          "info": {
+            "name": "Google Business Profile List Reviews",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://mybusiness.googleapis.com/v4/accounts/:accountId/locations/:locationId/reviews",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locationId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns a paginated list of reviews for the specified location."
+        },
+        {
+          "info": {
+            "name": "Google Business Profile Reply to Review",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://mybusiness.googleapis.com/v4/accounts/:accountId/locations/:locationId/reviews/:reviewId/reply",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locationId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "reviewId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Updates the reply to a specified review."
+        },
+        {
+          "info": {
+            "name": "Google Business Profile List Media",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://mybusiness.googleapis.com/v4/accounts/:accountId/locations/:locationId/media",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locationId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns a list of media items associated with a location."
+        },
+        {
+          "info": {
+            "name": "Google Business Profile List Local Posts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://mybusiness.googleapis.com/v4/accounts/:accountId/locations/:locationId/localPosts",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locationId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Returns a list of local posts for a location."
+        },
+        {
+          "info": {
+            "name": "Google Business Profile Create Local Post",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://mybusiness.googleapis.com/v4/accounts/:accountId/locations/:locationId/localPosts",
+            "params": [
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "locationId",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a new local post for a location."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
