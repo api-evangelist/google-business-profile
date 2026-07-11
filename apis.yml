@@ -40,6 +40,8 @@ apis:
       - Posts
       - Reviews
 common:
+  - type: OAuthScopes
+    url: scopes/google-business-profile-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/google
   - type: LinkedIn
