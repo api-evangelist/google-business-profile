@@ -40,6 +40,12 @@ apis:
       - Posts
       - Reviews
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-business-profile-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-business-profile-domain-security.yml
+  - type: Authentication
+    url: authentication/google-business-profile-authentication.yml
   - type: OAuthScopes
     url: scopes/google-business-profile-scopes.yml
   - type: GitHubOrganization
