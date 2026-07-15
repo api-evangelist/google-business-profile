@@ -40,6 +40,8 @@ apis:
       - Posts
       - Reviews
 common:
+  - type: AgenticAccess
+    url: agentic-access/google-business-profile-agentic-access.yml
   - type: VulnerabilityDisclosure
     url: security/google-business-profile-vulnerability-disclosure.yml
   - type: DomainSecurity
