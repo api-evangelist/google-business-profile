@@ -1,16 +1,17 @@
 openapi: 3.1.0
 info:
-  title: Google Business Profile API
-  description: >-
-    The Google Business Profile API provides an interface for managing business
-    location information on Google. It enables developers to programmatically
-    manage accounts, locations, reviews, media, posts, and more.
+  title: Google Business Profile Accounts API
+  description: The Google Business Profile API provides an interface for managing business location information on Google. It enables developers to programmatically manage accounts, locations, reviews, media, posts, and more.
   version: 4.0.0
   contact:
     name: Google
     url: https://developers.google.com/my-business/reference/rest
 servers:
-  - url: https://mybusiness.googleapis.com/v4
+- url: https://mybusiness.googleapis.com/v4
+security:
+- OAuth2: []
+tags:
+- name: Accounts
 paths:
   /accounts:
     get:
@@ -25,18 +26,18 @@ paths:
               schema:
                 $ref: '#/components/schemas/ListAccountsResponse'
       tags:
-        - Accounts
+      - Accounts
   /accounts/{accountId}:
     get:
       operationId: getAccount
       summary: Google Business Profile Get Account
       description: Gets the specified account.
       parameters:
-        - name: accountId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: accountId
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
@@ -45,18 +46,18 @@ paths:
               schema:
                 $ref: '#/components/schemas/Account'
       tags:
-        - Accounts
+      - Accounts
   /accounts/{accountId}/locations:
     get:
       operationId: listLocations
       summary: Google Business Profile List Locations
       description: Lists the locations for the specified account.
       parameters:
-        - name: accountId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: accountId
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
@@ -65,17 +66,17 @@ paths:
               schema:
                 $ref: '#/components/schemas/ListLocationsResponse'
       tags:
-        - Accounts
+      - Accounts
     post:
       operationId: createLocation
       summary: Google Business Profile Create Location
       description: Creates a new location for the specified account.
       parameters:
-        - name: accountId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: accountId
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -90,23 +91,23 @@ paths:
               schema:
                 $ref: '#/components/schemas/Location'
       tags:
-        - Accounts
+      - Accounts
   /accounts/{accountId}/locations/{locationId}:
     get:
       operationId: getLocation
       summary: Google Business Profile Get Location
       description: Gets the specified location.
       parameters:
-        - name: accountId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: locationId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: accountId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
@@ -115,22 +116,22 @@ paths:
               schema:
                 $ref: '#/components/schemas/Location'
       tags:
-        - Accounts
+      - Accounts
     patch:
       operationId: updateLocation
       summary: Google Business Profile Update Location
       description: Updates the specified location.
       parameters:
-        - name: accountId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: locationId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: accountId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -145,43 +146,43 @@ paths:
               schema:
                 $ref: '#/components/schemas/Location'
       tags:
-        - Accounts
+      - Accounts
     delete:
       operationId: deleteLocation
       summary: Google Business Profile Delete Location
       description: Deletes a location.
       parameters:
-        - name: accountId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: locationId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: accountId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
       tags:
-        - Accounts
+      - Accounts
   /accounts/{accountId}/locations/{locationId}/reviews:
     get:
       operationId: listReviews
       summary: Google Business Profile List Reviews
       description: Returns a paginated list of reviews for the specified location.
       parameters:
-        - name: accountId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: locationId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: accountId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
@@ -190,28 +191,28 @@ paths:
               schema:
                 $ref: '#/components/schemas/ListReviewsResponse'
       tags:
-        - Accounts
+      - Accounts
   /accounts/{accountId}/locations/{locationId}/reviews/{reviewId}/reply:
     put:
       operationId: replyToReview
       summary: Google Business Profile Reply to Review
       description: Updates the reply to a specified review.
       parameters:
-        - name: accountId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: locationId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: reviewId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: accountId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: reviewId
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -225,64 +226,64 @@ paths:
         '200':
           description: Successful response
       tags:
-        - Accounts
+      - Accounts
   /accounts/{accountId}/locations/{locationId}/media:
     get:
       operationId: listMedia
       summary: Google Business Profile List Media
       description: Returns a list of media items associated with a location.
       parameters:
-        - name: accountId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: locationId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: accountId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
       tags:
-        - Accounts
+      - Accounts
   /accounts/{accountId}/locations/{locationId}/localPosts:
     get:
       operationId: listLocalPosts
       summary: Google Business Profile List Local Posts
       description: Returns a list of local posts for a location.
       parameters:
-        - name: accountId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: locationId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: accountId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
       responses:
         '200':
           description: Successful response
       tags:
-        - Accounts
+      - Accounts
     post:
       operationId: createLocalPost
       summary: Google Business Profile Create Local Post
       description: Creates a new local post for a location.
       parameters:
-        - name: accountId
-          in: path
-          required: true
-          schema:
-            type: string
-        - name: locationId
-          in: path
-          required: true
-          schema:
-            type: string
+      - name: accountId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: locationId
+        in: path
+        required: true
+        schema:
+          type: string
       requestBody:
         required: true
         content:
@@ -293,31 +294,77 @@ paths:
         '200':
           description: Successful response
       tags:
-        - Accounts
+      - Accounts
 components:
-  securitySchemes:
-    OAuth2:
-      type: oauth2
-      flows:
-        authorizationCode:
-          authorizationUrl: https://accounts.google.com/o/oauth2/auth
-          tokenUrl: https://oauth2.googleapis.com/token
-          scopes:
-            https://www.googleapis.com/auth/business.manage: Manage business listings
   schemas:
-    Account:
+    LocalPost:
       type: object
       properties:
         name:
           type: string
-        accountName:
+        summary:
           type: string
-        type:
+        topicType:
           type: string
-        role:
-          type: string
-        state:
+        callToAction:
           type: object
+        media:
+          type: array
+          items:
+            type: object
+        state:
+          type: string
+        createTime:
+          type: string
+        updateTime:
+          type: string
+    ListLocationsResponse:
+      type: object
+      properties:
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Location'
+        nextPageToken:
+          type: string
+    Review:
+      type: object
+      properties:
+        name:
+          type: string
+        reviewId:
+          type: string
+        reviewer:
+          type: object
+          properties:
+            displayName:
+              type: string
+            profilePhotoUrl:
+              type: string
+        starRating:
+          type: string
+        comment:
+          type: string
+        createTime:
+          type: string
+        updateTime:
+          type: string
+        reviewReply:
+          type: object
+          properties:
+            comment:
+              type: string
+            updateTime:
+              type: string
+    ListAccountsResponse:
+      type: object
+      properties:
+        accounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
+        nextPageToken:
+          type: string
     Location:
       type: object
       properties:
@@ -357,74 +404,6 @@ components:
           type: object
         metadata:
           type: object
-    Review:
-      type: object
-      properties:
-        name:
-          type: string
-        reviewId:
-          type: string
-        reviewer:
-          type: object
-          properties:
-            displayName:
-              type: string
-            profilePhotoUrl:
-              type: string
-        starRating:
-          type: string
-        comment:
-          type: string
-        createTime:
-          type: string
-        updateTime:
-          type: string
-        reviewReply:
-          type: object
-          properties:
-            comment:
-              type: string
-            updateTime:
-              type: string
-    LocalPost:
-      type: object
-      properties:
-        name:
-          type: string
-        summary:
-          type: string
-        topicType:
-          type: string
-        callToAction:
-          type: object
-        media:
-          type: array
-          items:
-            type: object
-        state:
-          type: string
-        createTime:
-          type: string
-        updateTime:
-          type: string
-    ListAccountsResponse:
-      type: object
-      properties:
-        accounts:
-          type: array
-          items:
-            $ref: '#/components/schemas/Account'
-        nextPageToken:
-          type: string
-    ListLocationsResponse:
-      type: object
-      properties:
-        locations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Location'
-        nextPageToken:
-          type: string
     ListReviewsResponse:
       type: object
       properties:
@@ -438,7 +417,25 @@ components:
           type: integer
         nextPageToken:
           type: string
-security:
-  - OAuth2: []
-tags:
-  - name: Accounts
+    Account:
+      type: object
+      properties:
+        name:
+          type: string
+        accountName:
+          type: string
+        type:
+          type: string
+        role:
+          type: string
+        state:
+          type: object
+  securitySchemes:
+    OAuth2:
+      type: oauth2
+      flows:
+        authorizationCode:
+          authorizationUrl: https://accounts.google.com/o/oauth2/auth
+          tokenUrl: https://oauth2.googleapis.com/token
+          scopes:
+            https://www.googleapis.com/auth/business.manage: Manage business listings
