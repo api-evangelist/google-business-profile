@@ -4,7 +4,20 @@ description: >-
   The Google Business Profile API provides an interface for managing business location information on Google. It enables
   developers to programmatically manage accounts, locations, reviews, media, posts, questions and answers, and
   verification for business listings.
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/google-business-profile.png
 url: https://raw.githubusercontent.com/api-evangelist/google-business-profile/refs/heads/main/apis.yml
 created: '2026-03-13'
 modified: '2026-05-19'
@@ -17,29 +30,27 @@ tags:
   - Locations
   - Reviews
 apis:
-  - name: Google Business Profile API
-    description: >-
-      Provides programmatic access to manage business location information on Google, including accounts, locations,
-      reviews, media, local posts, and verification workflows.
-    humanURL: https://developers.google.com/my-business/reference/rest
-    baseURL: https://mybusiness.googleapis.com/v4
-    properties:
-      - type: Documentation
-        url: https://developers.google.com/my-business/reference/rest
-      - type: OpenAPI
-        url: openapi/openapi.yml
-      - type: Authentication
-        url: https://developers.google.com/my-business/content/prereqs
-      - type: GettingStarted
-        url: https://developers.google.com/my-business/content/get-started
-      - type: JSONSchema
-        url: json-schema/Location.json
-    tags:
-      - Business
-      - Locations
-      - Posts
-      - Reviews
+- aid: google-business-profile:google-business-profile-accounts-api
+  name: Google Business Profile Accounts API
+  description: The Accounts API from Google Business Profile — 8 operation(s) for accounts.
+  humanURL: https://developers.google.com/my-business/reference/rest
+  baseURL: https://mybusiness.googleapis.com/v4
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/google-business-profile-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://developers.google.com/my-business/reference/rest
+  - type: Authentication
+    url: https://developers.google.com/my-business/content/prereqs
+  - type: GettingStarted
+    url: https://developers.google.com/my-business/content/get-started
+  - type: JSONSchema
+    url: json-schema/Location.json
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/google-business-profile/overview
   - type: AgenticAccess
     url: agentic-access/google-business-profile-agentic-access.yml
   - type: VulnerabilityDisclosure
