@@ -1,0 +1,14 @@
+{
+  "provider": "google-business-profile",
+  "sources": [
+    "google-business-profile-accounts-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-business-profile-accounts-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

@@ -1,0 +1,1342 @@
+{
+  "info": {
+    "_postman_id": "58001f25-2828-414f-97bd-d1319028a5ee",
+    "name": "Google Business Profile Accounts API",
+    "description": "The Google Business Profile API provides an interface for managing business location information on Google. It enables developers to programmatically manage accounts, locations, reviews, media, posts, and more.\n\nContact Support:\n Name: Google",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T01:45:11.000Z",
+    "updatedAt": "2026-07-28T01:45:11.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-58001f25-2828-414f-97bd-d1319028a5ee"
+  },
+  "item": [
+    {
+      "name": "accounts",
+      "item": [
+        {
+          "name": "{accountId}",
+          "item": [
+            {
+              "name": "locations",
+              "item": [
+                {
+                  "name": "{locationId}",
+                  "item": [
+                    {
+                      "name": "reviews",
+                      "item": [
+                        {
+                          "name": "{reviewId}",
+                          "item": [
+                            {
+                              "name": "reply",
+                              "item": [
+                                {
+                                  "name": "Google Business Profile Reply to Review",
+                                  "id": "b357f2da-102b-4cba-b043-7cdcd34ca180",
+                                  "protocolProfileBehavior": {
+                                    "disableBodyPruning": true
+                                  },
+                                  "request": {
+                                    "method": "PUT",
+                                    "header": [
+                                      {
+                                        "key": "Content-Type",
+                                        "value": "application/json"
+                                      }
+                                    ],
+                                    "body": {
+                                      "mode": "raw",
+                                      "raw": "{\n  \"comment\": \"<string>\"\n}",
+                                      "options": {
+                                        "raw": {
+                                          "headerFamily": "json",
+                                          "language": "json"
+                                        }
+                                      }
+                                    },
+                                    "url": {
+                                      "raw": "{{baseUrl}}/accounts/:accountId/locations/:locationId/reviews/:reviewId/reply",
+                                      "host": [
+                                        "{{baseUrl}}"
+                                      ],
+                                      "path": [
+                                        "accounts",
+                                        ":accountId",
+                                        "locations",
+                                        ":locationId",
+                                        "reviews",
+                                        ":reviewId",
+                                        "reply"
+                                      ],
+                                      "variable": [
+                                        {
+                                          "id": "d2f7637e-db8e-4294-b45c-aa5b75737675",
+                                          "key": "accountId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "9240c931-d2a2-4c42-b39a-420f1298932e",
+                                          "key": "locationId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        },
+                                        {
+                                          "id": "7eef79e4-9a38-4da2-b708-b532a7a3349a",
+                                          "key": "reviewId",
+                                          "value": "<string>",
+                                          "description": "(Required) "
+                                        }
+                                      ]
+                                    },
+                                    "description": "Updates the reply to a specified review."
+                                  },
+                                  "response": [
+                                    {
+                                      "id": "913496ee-7896-49f1-b751-308cd4aa8c54",
+                                      "name": "Successful response",
+                                      "originalRequest": {
+                                        "method": "PUT",
+                                        "header": [
+                                          {
+                                            "key": "Content-Type",
+                                            "value": "application/json"
+                                          },
+                                          {
+                                            "description": "Added as a part of security scheme: oauth2",
+                                            "key": "Authorization",
+                                            "value": "<token>"
+                                          }
+                                        ],
+                                        "body": {
+                                          "mode": "raw",
+                                          "raw": "{\n  \"comment\": \"<string>\"\n}",
+                                          "options": {
+                                            "raw": {
+                                              "headerFamily": "json",
+                                              "language": "json"
+                                            }
+                                          }
+                                        },
+                                        "url": {
+                                          "raw": "{{baseUrl}}/accounts/:accountId/locations/:locationId/reviews/:reviewId/reply",
+                                          "host": [
+                                            "{{baseUrl}}"
+                                          ],
+                                          "path": [
+                                            "accounts",
+                                            ":accountId",
+                                            "locations",
+                                            ":locationId",
+                                            "reviews",
+                                            ":reviewId",
+                                            "reply"
+                                          ],
+                                          "variable": [
+                                            {
+                                              "key": "accountId"
+                                            },
+                                            {
+                                              "key": "locationId"
+                                            },
+                                            {
+                                              "key": "reviewId"
+                                            }
+                                          ]
+                                        }
+                                      },
+                                      "status": "OK",
+                                      "code": 200,
+                                      "_postman_previewlanguage": "text",
+                                      "header": [],
+                                      "cookie": [],
+                                      "responseTime": null,
+                                      "body": null,
+                                      "createdAt": "2026-07-28T01:45:11.000Z",
+                                      "updatedAt": "2026-07-28T01:45:11.000Z",
+                                      "uid": "35240-913496ee-7896-49f1-b751-308cd4aa8c54"
+                                    }
+                                  ],
+                                  "createdAt": "2026-07-28T01:45:11.000Z",
+                                  "updatedAt": "2026-07-28T01:45:11.000Z",
+                                  "uid": "35240-b357f2da-102b-4cba-b043-7cdcd34ca180"
+                                }
+                              ],
+                              "id": "5bbca0ec-c63e-4b0a-bcdf-aa1edfd68d15",
+                              "createdAt": "2026-07-28T01:45:11.000Z",
+                              "updatedAt": "2026-07-28T01:45:11.000Z",
+                              "uid": "35240-5bbca0ec-c63e-4b0a-bcdf-aa1edfd68d15"
+                            }
+                          ],
+                          "id": "218f643c-fc54-46a1-820d-353185eb98f0",
+                          "createdAt": "2026-07-28T01:45:11.000Z",
+                          "updatedAt": "2026-07-28T01:45:11.000Z",
+                          "uid": "35240-218f643c-fc54-46a1-820d-353185eb98f0"
+                        },
+                        {
+                          "name": "Google Business Profile List Reviews",
+                          "id": "7bc052fa-92bf-471e-a06a-b46274e4c343",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/accounts/:accountId/locations/:locationId/reviews",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "accounts",
+                                ":accountId",
+                                "locations",
+                                ":locationId",
+                                "reviews"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "937bba64-ce81-4016-863f-1a1a884d1f93",
+                                  "key": "accountId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "6351a45f-f767-4399-a85f-fe5d1be19d9c",
+                                  "key": "locationId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Returns a paginated list of reviews for the specified location."
+                          },
+                          "response": [
+                            {
+                              "id": "dda7a4bf-1929-401d-8285-ddf7173046d4",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "key": "Accept",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/accounts/:accountId/locations/:locationId/reviews",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "accounts",
+                                    ":accountId",
+                                    "locations",
+                                    ":locationId",
+                                    "reviews"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "accountId"
+                                    },
+                                    {
+                                      "key": "locationId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "json",
+                              "header": [
+                                {
+                                  "key": "Content-Type",
+                                  "value": "application/json"
+                                }
+                              ],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": "{\n  \"reviews\": [\n    {\n      \"name\": \"<string>\",\n      \"reviewId\": \"<string>\",\n      \"reviewer\": {\n        \"displayName\": \"<string>\",\n        \"profilePhotoUrl\": \"<string>\"\n      },\n      \"starRating\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"createTime\": \"<string>\",\n      \"updateTime\": \"<string>\",\n      \"reviewReply\": {\n        \"comment\": \"<string>\",\n        \"updateTime\": \"<string>\"\n      }\n    },\n    {\n      \"name\": \"<string>\",\n      \"reviewId\": \"<string>\",\n      \"reviewer\": {\n        \"displayName\": \"<string>\",\n        \"profilePhotoUrl\": \"<string>\"\n      },\n      \"starRating\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"createTime\": \"<string>\",\n      \"updateTime\": \"<string>\",\n      \"reviewReply\": {\n        \"comment\": \"<string>\",\n        \"updateTime\": \"<string>\"\n      }\n    }\n  ],\n  \"averageRating\": \"<number>\",\n  \"totalReviewCount\": \"<integer>\",\n  \"nextPageToken\": \"<string>\"\n}",
+                              "createdAt": "2026-07-28T01:45:11.000Z",
+                              "updatedAt": "2026-07-28T01:45:11.000Z",
+                              "uid": "35240-dda7a4bf-1929-401d-8285-ddf7173046d4"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:45:11.000Z",
+                          "updatedAt": "2026-07-28T01:45:11.000Z",
+                          "uid": "35240-7bc052fa-92bf-471e-a06a-b46274e4c343"
+                        }
+                      ],
+                      "id": "de17faf9-2480-4f5e-a82c-877cc29bcf78",
+                      "createdAt": "2026-07-28T01:45:11.000Z",
+                      "updatedAt": "2026-07-28T01:45:11.000Z",
+                      "uid": "35240-de17faf9-2480-4f5e-a82c-877cc29bcf78"
+                    },
+                    {
+                      "name": "media",
+                      "item": [
+                        {
+                          "name": "Google Business Profile List Media",
+                          "id": "bd722902-7e3e-4f01-82f0-003dd9c0c313",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/accounts/:accountId/locations/:locationId/media",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "accounts",
+                                ":accountId",
+                                "locations",
+                                ":locationId",
+                                "media"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "04ddc388-c1af-4d9c-83f1-356f8b9601b8",
+                                  "key": "accountId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "fd834aa5-944c-4ba7-8027-22c259677b12",
+                                  "key": "locationId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Returns a list of media items associated with a location."
+                          },
+                          "response": [
+                            {
+                              "id": "12c0e55f-b989-45fe-8933-f7c0b9a62c1b",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/accounts/:accountId/locations/:locationId/media",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "accounts",
+                                    ":accountId",
+                                    "locations",
+                                    ":locationId",
+                                    "media"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "accountId"
+                                    },
+                                    {
+                                      "key": "locationId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:45:11.000Z",
+                              "updatedAt": "2026-07-28T01:45:11.000Z",
+                              "uid": "35240-12c0e55f-b989-45fe-8933-f7c0b9a62c1b"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:45:11.000Z",
+                          "updatedAt": "2026-07-28T01:45:11.000Z",
+                          "uid": "35240-bd722902-7e3e-4f01-82f0-003dd9c0c313"
+                        }
+                      ],
+                      "id": "7c4061fa-e748-4631-94c2-08ce760d84fb",
+                      "createdAt": "2026-07-28T01:45:11.000Z",
+                      "updatedAt": "2026-07-28T01:45:11.000Z",
+                      "uid": "35240-7c4061fa-e748-4631-94c2-08ce760d84fb"
+                    },
+                    {
+                      "name": "localPosts",
+                      "item": [
+                        {
+                          "name": "Google Business Profile List Local Posts",
+                          "id": "a11d3bdd-f720-4208-9f4d-6c92a793edca",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "GET",
+                            "header": [],
+                            "url": {
+                              "raw": "{{baseUrl}}/accounts/:accountId/locations/:locationId/localPosts",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "accounts",
+                                ":accountId",
+                                "locations",
+                                ":locationId",
+                                "localPosts"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "2bc459c6-8146-46f0-8d2d-641d4b59bc90",
+                                  "key": "accountId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "ca51e314-6131-482f-a3ed-f12a85e6cf0a",
+                                  "key": "locationId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Returns a list of local posts for a location."
+                          },
+                          "response": [
+                            {
+                              "id": "d710b35a-a495-49c4-aa86-d34f24a07d52",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "GET",
+                                "header": [
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "url": {
+                                  "raw": "{{baseUrl}}/accounts/:accountId/locations/:locationId/localPosts",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "accounts",
+                                    ":accountId",
+                                    "locations",
+                                    ":locationId",
+                                    "localPosts"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "accountId"
+                                    },
+                                    {
+                                      "key": "locationId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:45:11.000Z",
+                              "updatedAt": "2026-07-28T01:45:11.000Z",
+                              "uid": "35240-d710b35a-a495-49c4-aa86-d34f24a07d52"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:45:11.000Z",
+                          "updatedAt": "2026-07-28T01:45:11.000Z",
+                          "uid": "35240-a11d3bdd-f720-4208-9f4d-6c92a793edca"
+                        },
+                        {
+                          "name": "Google Business Profile Create Local Post",
+                          "id": "f42052b3-f8e8-4d48-b3f1-7bec73acc375",
+                          "protocolProfileBehavior": {
+                            "disableBodyPruning": true
+                          },
+                          "request": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"topicType\": \"<string>\",\n  \"callToAction\": {},\n  \"state\": \"<string>\",\n  \"createTime\": \"<string>\",\n  \"updateTime\": \"<string>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/accounts/:accountId/locations/:locationId/localPosts",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "accounts",
+                                ":accountId",
+                                "locations",
+                                ":locationId",
+                                "localPosts"
+                              ],
+                              "variable": [
+                                {
+                                  "id": "98f3c867-ef8f-407d-bf9e-402a63223f3b",
+                                  "key": "accountId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                },
+                                {
+                                  "id": "7ca68233-d4ab-44b0-bf71-9e5afe1f18b1",
+                                  "key": "locationId",
+                                  "value": "<string>",
+                                  "description": "(Required) "
+                                }
+                              ]
+                            },
+                            "description": "Creates a new local post for a location."
+                          },
+                          "response": [
+                            {
+                              "id": "b3193a0f-8bf0-4de4-9c6e-b92c03596cd5",
+                              "name": "Successful response",
+                              "originalRequest": {
+                                "method": "POST",
+                                "header": [
+                                  {
+                                    "key": "Content-Type",
+                                    "value": "application/json"
+                                  },
+                                  {
+                                    "description": "Added as a part of security scheme: oauth2",
+                                    "key": "Authorization",
+                                    "value": "<token>"
+                                  }
+                                ],
+                                "body": {
+                                  "mode": "raw",
+                                  "raw": "{\n  \"name\": \"<string>\",\n  \"summary\": \"<string>\",\n  \"topicType\": \"<string>\",\n  \"callToAction\": {},\n  \"state\": \"<string>\",\n  \"createTime\": \"<string>\",\n  \"updateTime\": \"<string>\"\n}",
+                                  "options": {
+                                    "raw": {
+                                      "headerFamily": "json",
+                                      "language": "json"
+                                    }
+                                  }
+                                },
+                                "url": {
+                                  "raw": "{{baseUrl}}/accounts/:accountId/locations/:locationId/localPosts",
+                                  "host": [
+                                    "{{baseUrl}}"
+                                  ],
+                                  "path": [
+                                    "accounts",
+                                    ":accountId",
+                                    "locations",
+                                    ":locationId",
+                                    "localPosts"
+                                  ],
+                                  "variable": [
+                                    {
+                                      "key": "accountId"
+                                    },
+                                    {
+                                      "key": "locationId"
+                                    }
+                                  ]
+                                }
+                              },
+                              "status": "OK",
+                              "code": 200,
+                              "_postman_previewlanguage": "text",
+                              "header": [],
+                              "cookie": [],
+                              "responseTime": null,
+                              "body": null,
+                              "createdAt": "2026-07-28T01:45:11.000Z",
+                              "updatedAt": "2026-07-28T01:45:11.000Z",
+                              "uid": "35240-b3193a0f-8bf0-4de4-9c6e-b92c03596cd5"
+                            }
+                          ],
+                          "createdAt": "2026-07-28T01:45:11.000Z",
+                          "updatedAt": "2026-07-28T01:45:11.000Z",
+                          "uid": "35240-f42052b3-f8e8-4d48-b3f1-7bec73acc375"
+                        }
+                      ],
+                      "id": "a1927eb7-253f-45eb-9b2a-a6e8c99695c1",
+                      "createdAt": "2026-07-28T01:45:11.000Z",
+                      "updatedAt": "2026-07-28T01:45:11.000Z",
+                      "uid": "35240-a1927eb7-253f-45eb-9b2a-a6e8c99695c1"
+                    },
+                    {
+                      "name": "Google Business Profile Get Location",
+                      "id": "33350326-2a37-4b25-83e2-716f2719e994",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/accounts/:accountId/locations/:locationId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "accounts",
+                            ":accountId",
+                            "locations",
+                            ":locationId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "12013f12-c1a3-40f4-91bd-c6e0fcce6da6",
+                              "key": "accountId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "23749031-9509-4c0f-8c96-5dd15e69e7cb",
+                              "key": "locationId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Gets the specified location."
+                      },
+                      "response": [
+                        {
+                          "id": "de725454-d05b-40ec-8280-48d9911557f0",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/accounts/:accountId/locations/:locationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "accounts",
+                                ":accountId",
+                                "locations",
+                                ":locationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "accountId"
+                                },
+                                {
+                                  "key": "locationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"name\": \"<string>\",\n  \"locationName\": \"<string>\",\n  \"primaryPhone\": \"<string>\",\n  \"address\": {\n    \"addressLines\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"locality\": \"<string>\",\n    \"administrativeArea\": \"<string>\",\n    \"postalCode\": \"<string>\",\n    \"regionCode\": \"<string>\"\n  },\n  \"primaryCategory\": {\n    \"displayName\": \"<string>\",\n    \"categoryId\": \"<string>\"\n  },\n  \"websiteUrl\": \"<string>\",\n  \"regularHours\": {},\n  \"locationState\": {},\n  \"metadata\": {}\n}",
+                          "createdAt": "2026-07-28T01:45:11.000Z",
+                          "updatedAt": "2026-07-28T01:45:11.000Z",
+                          "uid": "35240-de725454-d05b-40ec-8280-48d9911557f0"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:11.000Z",
+                      "updatedAt": "2026-07-28T01:45:11.000Z",
+                      "uid": "35240-33350326-2a37-4b25-83e2-716f2719e994"
+                    },
+                    {
+                      "name": "Google Business Profile Update Location",
+                      "id": "be9e324a-ad15-4ea9-bd1a-1e1416a7df2f",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "PATCH",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"locationName\": \"<string>\",\n  \"primaryPhone\": \"<string>\",\n  \"address\": {\n    \"addressLines\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"locality\": \"<string>\",\n    \"administrativeArea\": \"<string>\",\n    \"postalCode\": \"<string>\",\n    \"regionCode\": \"<string>\"\n  },\n  \"primaryCategory\": {\n    \"displayName\": \"<string>\",\n    \"categoryId\": \"<string>\"\n  },\n  \"websiteUrl\": \"<string>\",\n  \"regularHours\": {},\n  \"locationState\": {},\n  \"metadata\": {}\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/accounts/:accountId/locations/:locationId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "accounts",
+                            ":accountId",
+                            "locations",
+                            ":locationId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "bf1e3469-e425-46de-b8b7-7c0b2eb9e287",
+                              "key": "accountId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "c73cf447-6bad-4083-80b5-68df8bcc2440",
+                              "key": "locationId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Updates the specified location."
+                      },
+                      "response": [
+                        {
+                          "id": "4fe4d1e1-8fe4-4d7e-a09e-9f5f665857c8",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "PATCH",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"name\": \"<string>\",\n  \"locationName\": \"<string>\",\n  \"primaryPhone\": \"<string>\",\n  \"address\": {\n    \"addressLines\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"locality\": \"<string>\",\n    \"administrativeArea\": \"<string>\",\n    \"postalCode\": \"<string>\",\n    \"regionCode\": \"<string>\"\n  },\n  \"primaryCategory\": {\n    \"displayName\": \"<string>\",\n    \"categoryId\": \"<string>\"\n  },\n  \"websiteUrl\": \"<string>\",\n  \"regularHours\": {},\n  \"locationState\": {},\n  \"metadata\": {}\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/accounts/:accountId/locations/:locationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "accounts",
+                                ":accountId",
+                                "locations",
+                                ":locationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "accountId"
+                                },
+                                {
+                                  "key": "locationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "{\n  \"name\": \"<string>\",\n  \"locationName\": \"<string>\",\n  \"primaryPhone\": \"<string>\",\n  \"address\": {\n    \"addressLines\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"locality\": \"<string>\",\n    \"administrativeArea\": \"<string>\",\n    \"postalCode\": \"<string>\",\n    \"regionCode\": \"<string>\"\n  },\n  \"primaryCategory\": {\n    \"displayName\": \"<string>\",\n    \"categoryId\": \"<string>\"\n  },\n  \"websiteUrl\": \"<string>\",\n  \"regularHours\": {},\n  \"locationState\": {},\n  \"metadata\": {}\n}",
+                          "createdAt": "2026-07-28T01:45:11.000Z",
+                          "updatedAt": "2026-07-28T01:45:11.000Z",
+                          "uid": "35240-4fe4d1e1-8fe4-4d7e-a09e-9f5f665857c8"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:11.000Z",
+                      "updatedAt": "2026-07-28T01:45:11.000Z",
+                      "uid": "35240-be9e324a-ad15-4ea9-bd1a-1e1416a7df2f"
+                    },
+                    {
+                      "name": "Google Business Profile Delete Location",
+                      "id": "3bbcd1ca-a1ec-4025-aab6-2e13ef63dfc4",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                          "raw": "{{baseUrl}}/accounts/:accountId/locations/:locationId",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "accounts",
+                            ":accountId",
+                            "locations",
+                            ":locationId"
+                          ],
+                          "variable": [
+                            {
+                              "id": "783f2abf-7054-4e35-9c0b-33e095ce0dab",
+                              "key": "accountId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            },
+                            {
+                              "id": "d9260b09-c47e-474d-b763-66dc039ae97e",
+                              "key": "locationId",
+                              "value": "<string>",
+                              "description": "(Required) "
+                            }
+                          ]
+                        },
+                        "description": "Deletes a location."
+                      },
+                      "response": [
+                        {
+                          "id": "bf02f0cb-2828-4073-a689-422631c734b1",
+                          "name": "Successful response",
+                          "originalRequest": {
+                            "method": "DELETE",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: oauth2",
+                                "key": "Authorization",
+                                "value": "<token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/accounts/:accountId/locations/:locationId",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "accounts",
+                                ":accountId",
+                                "locations",
+                                ":locationId"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "accountId"
+                                },
+                                {
+                                  "key": "locationId"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T01:45:11.000Z",
+                          "updatedAt": "2026-07-28T01:45:11.000Z",
+                          "uid": "35240-bf02f0cb-2828-4073-a689-422631c734b1"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T01:45:11.000Z",
+                      "updatedAt": "2026-07-28T01:45:11.000Z",
+                      "uid": "35240-3bbcd1ca-a1ec-4025-aab6-2e13ef63dfc4"
+                    }
+                  ],
+                  "id": "f08960c4-dbf6-45fa-a835-bdac36ccf7a2",
+                  "createdAt": "2026-07-28T01:45:11.000Z",
+                  "updatedAt": "2026-07-28T01:45:11.000Z",
+                  "uid": "35240-f08960c4-dbf6-45fa-a835-bdac36ccf7a2"
+                },
+                {
+                  "name": "Google Business Profile List Locations",
+                  "id": "1ed128a2-d574-4e13-8e33-8a8c787adf03",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/accounts/:accountId/locations",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "accounts",
+                        ":accountId",
+                        "locations"
+                      ],
+                      "variable": [
+                        {
+                          "id": "5acb4a15-8274-4ab3-882e-e68579106a99",
+                          "key": "accountId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Lists the locations for the specified account."
+                  },
+                  "response": [
+                    {
+                      "id": "16d1fb30-2dff-4f4e-91d9-936c7804a808",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/accounts/:accountId/locations",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "accounts",
+                            ":accountId",
+                            "locations"
+                          ],
+                          "variable": [
+                            {
+                              "key": "accountId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"locations\": [\n    {\n      \"name\": \"<string>\",\n      \"locationName\": \"<string>\",\n      \"primaryPhone\": \"<string>\",\n      \"address\": {\n        \"addressLines\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"locality\": \"<string>\",\n        \"administrativeArea\": \"<string>\",\n        \"postalCode\": \"<string>\",\n        \"regionCode\": \"<string>\"\n      },\n      \"primaryCategory\": {\n        \"displayName\": \"<string>\",\n        \"categoryId\": \"<string>\"\n      },\n      \"websiteUrl\": \"<string>\",\n      \"regularHours\": {},\n      \"locationState\": {},\n      \"metadata\": {}\n    },\n    {\n      \"name\": \"<string>\",\n      \"locationName\": \"<string>\",\n      \"primaryPhone\": \"<string>\",\n      \"address\": {\n        \"addressLines\": [\n          \"<string>\",\n          \"<string>\"\n        ],\n        \"locality\": \"<string>\",\n        \"administrativeArea\": \"<string>\",\n        \"postalCode\": \"<string>\",\n        \"regionCode\": \"<string>\"\n      },\n      \"primaryCategory\": {\n        \"displayName\": \"<string>\",\n        \"categoryId\": \"<string>\"\n      },\n      \"websiteUrl\": \"<string>\",\n      \"regularHours\": {},\n      \"locationState\": {},\n      \"metadata\": {}\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+                      "createdAt": "2026-07-28T01:45:11.000Z",
+                      "updatedAt": "2026-07-28T01:45:11.000Z",
+                      "uid": "35240-16d1fb30-2dff-4f4e-91d9-936c7804a808"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:45:11.000Z",
+                  "updatedAt": "2026-07-28T01:45:11.000Z",
+                  "uid": "35240-1ed128a2-d574-4e13-8e33-8a8c787adf03"
+                },
+                {
+                  "name": "Google Business Profile Create Location",
+                  "id": "51ed9059-f230-4aab-af35-a8cf5dd91192",
+                  "protocolProfileBehavior": {
+                    "disableBodyPruning": true
+                  },
+                  "request": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{\n  \"name\": \"<string>\",\n  \"locationName\": \"<string>\",\n  \"primaryPhone\": \"<string>\",\n  \"address\": {\n    \"addressLines\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"locality\": \"<string>\",\n    \"administrativeArea\": \"<string>\",\n    \"postalCode\": \"<string>\",\n    \"regionCode\": \"<string>\"\n  },\n  \"primaryCategory\": {\n    \"displayName\": \"<string>\",\n    \"categoryId\": \"<string>\"\n  },\n  \"websiteUrl\": \"<string>\",\n  \"regularHours\": {},\n  \"locationState\": {},\n  \"metadata\": {}\n}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/accounts/:accountId/locations",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "accounts",
+                        ":accountId",
+                        "locations"
+                      ],
+                      "variable": [
+                        {
+                          "id": "e594cc34-5b0d-4328-82ab-9e5d0d288431",
+                          "key": "accountId",
+                          "value": "<string>",
+                          "description": "(Required) "
+                        }
+                      ]
+                    },
+                    "description": "Creates a new location for the specified account."
+                  },
+                  "response": [
+                    {
+                      "id": "6eb15e6c-8e2b-4996-a508-146da5191c14",
+                      "name": "Successful response",
+                      "originalRequest": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          },
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          },
+                          {
+                            "description": "Added as a part of security scheme: oauth2",
+                            "key": "Authorization",
+                            "value": "<token>"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"name\": \"<string>\",\n  \"locationName\": \"<string>\",\n  \"primaryPhone\": \"<string>\",\n  \"address\": {\n    \"addressLines\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"locality\": \"<string>\",\n    \"administrativeArea\": \"<string>\",\n    \"postalCode\": \"<string>\",\n    \"regionCode\": \"<string>\"\n  },\n  \"primaryCategory\": {\n    \"displayName\": \"<string>\",\n    \"categoryId\": \"<string>\"\n  },\n  \"websiteUrl\": \"<string>\",\n  \"regularHours\": {},\n  \"locationState\": {},\n  \"metadata\": {}\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/accounts/:accountId/locations",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "accounts",
+                            ":accountId",
+                            "locations"
+                          ],
+                          "variable": [
+                            {
+                              "key": "accountId"
+                            }
+                          ]
+                        }
+                      },
+                      "status": "OK",
+                      "code": 200,
+                      "_postman_previewlanguage": "json",
+                      "header": [
+                        {
+                          "key": "Content-Type",
+                          "value": "application/json"
+                        }
+                      ],
+                      "cookie": [],
+                      "responseTime": null,
+                      "body": "{\n  \"name\": \"<string>\",\n  \"locationName\": \"<string>\",\n  \"primaryPhone\": \"<string>\",\n  \"address\": {\n    \"addressLines\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"locality\": \"<string>\",\n    \"administrativeArea\": \"<string>\",\n    \"postalCode\": \"<string>\",\n    \"regionCode\": \"<string>\"\n  },\n  \"primaryCategory\": {\n    \"displayName\": \"<string>\",\n    \"categoryId\": \"<string>\"\n  },\n  \"websiteUrl\": \"<string>\",\n  \"regularHours\": {},\n  \"locationState\": {},\n  \"metadata\": {}\n}",
+                      "createdAt": "2026-07-28T01:45:11.000Z",
+                      "updatedAt": "2026-07-28T01:45:11.000Z",
+                      "uid": "35240-6eb15e6c-8e2b-4996-a508-146da5191c14"
+                    }
+                  ],
+                  "createdAt": "2026-07-28T01:45:11.000Z",
+                  "updatedAt": "2026-07-28T01:45:11.000Z",
+                  "uid": "35240-51ed9059-f230-4aab-af35-a8cf5dd91192"
+                }
+              ],
+              "id": "c02190df-653b-4372-8693-abe912b7461e",
+              "createdAt": "2026-07-28T01:45:11.000Z",
+              "updatedAt": "2026-07-28T01:45:11.000Z",
+              "uid": "35240-c02190df-653b-4372-8693-abe912b7461e"
+            },
+            {
+              "name": "Google Business Profile Get Account",
+              "id": "3374c672-78a2-4dbc-a98a-b7420c294a40",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts/:accountId",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts",
+                    ":accountId"
+                  ],
+                  "variable": [
+                    {
+                      "id": "c8edb918-9452-4b63-b0f0-1408497fb8f4",
+                      "key": "accountId",
+                      "value": "<string>",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "description": "Gets the specified account."
+              },
+              "response": [
+                {
+                  "id": "4760ef8c-d60e-4495-abef-17cbbc3b2dd0",
+                  "name": "Successful response",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: oauth2",
+                        "key": "Authorization",
+                        "value": "<token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/accounts/:accountId",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "accounts",
+                        ":accountId"
+                      ],
+                      "variable": [
+                        {
+                          "key": "accountId"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"name\": \"<string>\",\n  \"accountName\": \"<string>\",\n  \"type\": \"<string>\",\n  \"role\": \"<string>\",\n  \"state\": {}\n}",
+                  "createdAt": "2026-07-28T01:45:11.000Z",
+                  "updatedAt": "2026-07-28T01:45:11.000Z",
+                  "uid": "35240-4760ef8c-d60e-4495-abef-17cbbc3b2dd0"
+                }
+              ],
+              "createdAt": "2026-07-28T01:45:11.000Z",
+              "updatedAt": "2026-07-28T01:45:11.000Z",
+              "uid": "35240-3374c672-78a2-4dbc-a98a-b7420c294a40"
+            }
+          ],
+          "id": "b7c4bcdc-b45e-4e4b-a5df-3e145ee17596",
+          "createdAt": "2026-07-28T01:45:11.000Z",
+          "updatedAt": "2026-07-28T01:45:11.000Z",
+          "uid": "35240-b7c4bcdc-b45e-4e4b-a5df-3e145ee17596"
+        },
+        {
+          "name": "Google Business Profile List Accounts",
+          "id": "c4e759a6-7d45-4ac9-b620-1f41f595fda5",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/accounts",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "accounts"
+              ]
+            },
+            "description": "Lists all accounts for the authenticated user."
+          },
+          "response": [
+            {
+              "id": "57bbae44-9a29-4a41-9029-b4245b9edbf4",
+              "name": "Successful response",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: oauth2",
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "accounts"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"accounts\": [\n    {\n      \"name\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"type\": \"<string>\",\n      \"role\": \"<string>\",\n      \"state\": {}\n    },\n    {\n      \"name\": \"<string>\",\n      \"accountName\": \"<string>\",\n      \"type\": \"<string>\",\n      \"role\": \"<string>\",\n      \"state\": {}\n    }\n  ],\n  \"nextPageToken\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T01:45:11.000Z",
+              "updatedAt": "2026-07-28T01:45:11.000Z",
+              "uid": "35240-57bbae44-9a29-4a41-9029-b4245b9edbf4"
+            }
+          ],
+          "createdAt": "2026-07-28T01:45:11.000Z",
+          "updatedAt": "2026-07-28T01:45:11.000Z",
+          "uid": "35240-c4e759a6-7d45-4ac9-b620-1f41f595fda5"
+        }
+      ],
+      "id": "04ae10c9-4fd6-4c52-bca6-28c19488ec34",
+      "createdAt": "2026-07-28T01:45:11.000Z",
+      "updatedAt": "2026-07-28T01:45:11.000Z",
+      "uid": "35240-04ae10c9-4fd6-4c52-bca6-28c19488ec34"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "scope",
+        "value": "https://www.googleapis.com/auth/business.manage",
+        "type": "string"
+      },
+      {
+        "key": "accessTokenUrl",
+        "value": "https://oauth2.googleapis.com/token",
+        "type": "string"
+      },
+      {
+        "key": "authUrl",
+        "value": "https://accounts.google.com/o/oauth2/auth",
+        "type": "string"
+      },
+      {
+        "key": "grant_type",
+        "value": "authorization_code",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "https://mybusiness.googleapis.com/v4"
+    }
+  ]
+}
