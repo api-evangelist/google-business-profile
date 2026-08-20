@@ -36,6 +36,8 @@ apis:
   humanURL: https://developers.google.com/my-business/reference/rest
   baseURL: https://mybusiness.googleapis.com/v4
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
