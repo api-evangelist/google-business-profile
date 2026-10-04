@@ -69,6 +69,9 @@ apis:
   - type: JSONSchema
     url: json-schema/Location.json
 common:
+  - type: CapabilityMap
+    url: capabilities/google-business-profile-capability-edges.yml
+    name: Google Business Profile Business Capability Map
   - type: Website
     url: https://www.google.com/
   - type: PostmanWorkspace
