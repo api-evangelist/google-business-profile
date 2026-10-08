@@ -69,6 +69,12 @@ apis:
   - type: JSONSchema
     url: json-schema/Location.json
 common:
+  - type: Plans
+    url: plans/google-business-profile-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/google-business-profile-rate-limits.yml
+  - type: FinOps
+    url: finops/google-business-profile-finops.yml
   - type: CapabilityMap
     url: capabilities/google-business-profile-capability-edges.yml
     name: Google Business Profile Business Capability Map
