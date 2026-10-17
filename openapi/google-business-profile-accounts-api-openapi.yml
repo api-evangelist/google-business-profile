@@ -297,49 +297,6 @@ paths:
       - Accounts
 components:
   schemas:
-    ListReviewsResponse:
-      type: object
-      properties:
-        reviews:
-          type: array
-          items:
-            $ref: '#/components/schemas/Review'
-        averageRating:
-          type: number
-        totalReviewCount:
-          type: integer
-        nextPageToken:
-          type: string
-    ListLocationsResponse:
-      type: object
-      properties:
-        locations:
-          type: array
-          items:
-            $ref: '#/components/schemas/Location'
-        nextPageToken:
-          type: string
-    LocalPost:
-      type: object
-      properties:
-        name:
-          type: string
-        summary:
-          type: string
-        topicType:
-          type: string
-        callToAction:
-          type: object
-        media:
-          type: array
-          items:
-            type: object
-        state:
-          type: string
-        createTime:
-          type: string
-        updateTime:
-          type: string
     Review:
       type: object
       properties:
@@ -369,6 +326,71 @@ components:
               type: string
             updateTime:
               type: string
+    Account:
+      type: object
+      properties:
+        name:
+          type: string
+        accountName:
+          type: string
+        type:
+          type: string
+        role:
+          type: string
+        state:
+          type: object
+    ListLocationsResponse:
+      type: object
+      properties:
+        locations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Location'
+        nextPageToken:
+          type: string
+    ListAccountsResponse:
+      type: object
+      properties:
+        accounts:
+          type: array
+          items:
+            $ref: '#/components/schemas/Account'
+        nextPageToken:
+          type: string
+    LocalPost:
+      type: object
+      properties:
+        name:
+          type: string
+        summary:
+          type: string
+        topicType:
+          type: string
+        callToAction:
+          type: object
+        media:
+          type: array
+          items:
+            type: object
+        state:
+          type: string
+        createTime:
+          type: string
+        updateTime:
+          type: string
+    ListReviewsResponse:
+      type: object
+      properties:
+        reviews:
+          type: array
+          items:
+            $ref: '#/components/schemas/Review'
+        averageRating:
+          type: number
+        totalReviewCount:
+          type: integer
+        nextPageToken:
+          type: string
     Location:
       type: object
       properties:
@@ -407,28 +429,6 @@ components:
         locationState:
           type: object
         metadata:
-          type: object
-    ListAccountsResponse:
-      type: object
-      properties:
-        accounts:
-          type: array
-          items:
-            $ref: '#/components/schemas/Account'
-        nextPageToken:
-          type: string
-    Account:
-      type: object
-      properties:
-        name:
-          type: string
-        accountName:
-          type: string
-        type:
-          type: string
-        role:
-          type: string
-        state:
           type: object
   securitySchemes:
     OAuth2:
