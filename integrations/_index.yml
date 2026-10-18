@@ -77,5 +77,5 @@
     - connectors/applications/google-business-profile
     vendor_link: https://business.google.com/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
