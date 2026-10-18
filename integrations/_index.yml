@@ -53,3 +53,29 @@
     builder: n8n (built-in node)
   status: not-a-workflow
   arazzo: null
+- slug: google-business-profile-fivetran
+  label: Fivetran
+  partner: fivetran
+  partner_name: Fivetran
+  type: marketplace
+  marketplace: fivetran-connectors
+  channel: elt-connector
+  evidence: https://fivetran.com/docs/connectors/applications/google-business-profile
+  source: edge
+  relationship: ipaas-bridge
+  contract_reference:
+    register: Fivetran connectors (fivetran.com/docs/connectors, docs-sitemap.xml + Partner-Built program)
+    spec_file: null
+    role: elt-connector:fivetran
+    registered_name: Google Business Profile
+    matched_domain: google.com
+    matched_by: domain+name-among-holders
+    detected_by: sweep-data-integration.py
+    detected: '2026-10-18'
+    signal_note: one edge per (provider, platform); connectors, streams, packages and usage are context, never read
+    connector_paths:
+    - connectors/applications/google-business-profile
+    vendor_link: https://business.google.com/
+    builder: Fivetran
+  status: pending-generation
+  arazzo: null
