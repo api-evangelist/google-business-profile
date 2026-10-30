@@ -1,4 +1,4 @@
-# Google Business Profile (google-business-profile)
+# Google Business Profile
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,67 +66,149 @@
 
 The Google Business Profile API provides an interface for managing business location information on Google. It enables developers to programmatically manage accounts, locations, reviews, media, posts, questions and answers, and verification for business listings.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/google-business-profile/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/google-business-profile/refs/heads/main/apis.yml)
+**Areas:** Business Profiles · Google · Local Business · Location · Reviews
 
-## Scope
+## Google Business Profile on APIs.io
 
-- **Type:** Index
+Everything profiled for Google Business Profile is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/google-business-profile/](https://apis.io/providers/google-business-profile/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (1)
 
-- Business Profiles
-- Google
-- Local Business
-- Locations
-- Reviews
+- [Google Business Profile Accounts API](https://apis.io/apis/google-business-profile/google-business-profile-accounts-api/) — The Accounts API from Google Business Profile — 8 operation(s) for accounts.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-03-13
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Google Business Profile API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Provides programmatic access to manage business location information on Google, including accounts, locations, reviews, media, local posts, and verification workflows.
+- [Google Business Profile Agentic Access](https://apis.io/agentic-access/google-business-profile/google-business-profile-agentic-access/)
 
-- **Human URL:** [https://developers.google.com/my-business/reference/rest](https://developers.google.com/my-business/reference/rest)
-- **Base URL:** `https://mybusiness.googleapis.com/v4`
+#### JSON Schema (1)
 
-#### Tags
+The data models the API reads and writes.
 
-- Business
-- Locations
-- Posts
-- Reviews
+- [Google Business Profile Location](https://apis.io/schemas/google-business-profile/Location/)
 
-#### Properties
+#### JSON-LD (1)
 
+Linked-data contexts for the provider's vocabulary.
+
+- [context Context](https://apis.io/jsonld/google-business-profile/context/)
+
+#### Collections (3)
+
+Postman and Open Collection request collections.
+
+- [Google Business Profile Accounts API](https://apis.io/collections/google-business-profile/open-google-business-profile-accounts-api/)
+- [Google Business Profile API](https://apis.io/collections/google-business-profile/open-openapi/)
+- [Google Business Profile Accounts API](https://apis.io/collections/google-business-profile/postman-google-business-profile-accounts-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Google Business Profile — jsonschema rules](https://apis.io/rules/google-business-profile/google-business-profile-jsonschema-spectral-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Google Business Profile Authentication](https://apis.io/security/google-business-profile/google-business-profile-authentication/)
+- [Google Business Profile Domain Security](https://apis.io/security/google-business-profile/google-business-profile-domain-security/)
+- [Google Business Profile Vulnerability Disclosure](https://apis.io/security/google-business-profile/google-business-profile-vulnerability-disclosure/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Google Business Profile Scopes](https://apis.io/scopes/google-business-profile/google-business-profile-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Google Business Profile Plans Pricing](https://apis.io/plans/google-business-profile/google-business-profile-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Google Business Profile Rate Limits](https://apis.io/rate-limits/google-business-profile/google-business-profile-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Google Business Profile Finops](https://apis.io/finops/google-business-profile/google-business-profile-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.google.com/)
 - [Documentation](https://developers.google.com/my-business/reference/rest)
-- [OpenAPI](openapi/openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/openapi.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/openapi.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [Authentication](https://developers.google.com/my-business/content/prereqs)
-- [Getting Started](https://developers.google.com/my-business/content/get-started)
-- [JSON Schema](json-schema/Location.json) — [JSON Schema](https://json-schema.org/specification)
-
-## Common Properties
-
-- [GitHub Organization](https://github.com/google)
-- [LinkedIn](https://www.linkedin.com/showcase/google-my-business)
-- [Portal](https://developers.google.com/my-business)
-- [Getting Started](https://developers.google.com/my-business/content/get-started)
-- [Documentation](https://developers.google.com/my-business/reference/rest)
-- [Authentication](https://developers.google.com/my-business/content/prereqs)
+- [Getting started](https://developers.google.com/my-business/content/get-started)
 - [Pricing](https://developers.google.com/my-business)
-- [Terms of Service](https://developers.google.com/terms)
-- [Privacy Policy](https://policies.google.com/privacy)
-- [Status Page](https://status.cloud.google.com/)
 - [Support](https://developers.google.com/my-business/content/support)
-- [JSON-LD](json-ld/context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
+- [Terms of service](https://developers.google.com/terms)
+- [Privacy policy](https://policies.google.com/privacy)
+- [GitHub](https://github.com/google)
+- [Status](https://status.cloud.google.com/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 45.9** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 59.9 |
+| Contract governance | 9.8 |
+| Operational transparency | 36.8 |
+| Developer ergonomics | 36.9 |
+| Access clarity | 39.5 |
+
+**Agent readiness 24.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | documented (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 40.2** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/google-business-profile/](https://apis.io/providers/google-business-profile/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Google Business Profile: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/google-business-profile/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
